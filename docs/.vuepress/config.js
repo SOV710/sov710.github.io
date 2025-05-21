@@ -5,20 +5,22 @@ import theme from "./theme.js";
 export default defineUserConfig({
   lang: 'zh-CN',
   title: 'SOV710 Blog',
-  description: '一个基于 VuePress 的技术博客',
+  description: 'Let\'s play arch & robotics!',
   
   // Use the theme we defined
   theme,
   
-  // Configure Markdown
-  markdown: {
-    code: {
-      lineNumbers: true,
-    }
-  },
-  
   // Use Vite as bundler
   bundler: viteBundler(),
+  
+  // Markdown configuration
+  markdown: {
+    highlighter: {
+      // Use PrismJS through theme's integration
+      type: "prismjs",
+      preloadLanguages: ['markdown', 'javascript', 'typescript', 'bash', 'css'],
+    },
+  },
   
   head: [
     // Add favicon

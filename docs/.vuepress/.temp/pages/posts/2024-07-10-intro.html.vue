@@ -12,32 +12,34 @@
 </ol>
 <h2 id="特色功能展示" tabindex="-1"><a class="header-anchor" href="#特色功能展示"><span>特色功能展示</span></a></h2>
 <h3 id="代码块高亮" tabindex="-1"><a class="header-anchor" href="#代码块高亮"><span>代码块高亮</span></a></h3>
-<div class="language-js line-numbers-mode" data-highlighter="shiki" data-ext="js" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 这是一个JavaScript代码示例</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">export</span><span style="--shiki-light:#E45649;--shiki-dark:#C678DD"> default</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  data</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    return</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      message</span><span style="--shiki-light:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'Hello VuePress!'</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  },</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  methods</span><span style="--shiki-light:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    hello</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">      console</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">this</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">message</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  }</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token comment">// 这是一个JavaScript代码示例</span></span>
+<span class="line"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">return</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'Hello VuePress!'</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="数学公式支持" tabindex="-1"><a class="header-anchor" href="#数学公式支持"><span>数学公式支持</span></a></h3>
 <p>你可以在 Markdown 中使用 TeX 语法编写数学公式：</p>
 <p>$$
 \frac{\partial f}{\partial x} = 2\sqrt{a}x
 $$</p>
 <h3 id="mermaid-流程图" tabindex="-1"><a class="header-anchor" href="#mermaid-流程图"><span>Mermaid 流程图</span></a></h3>
-<div class="language-mermaid line-numbers-mode" data-highlighter="shiki" data-ext="mermaid" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">flowchart TD</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    A[开始] --> B{是否安装 VuePress?}</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    B -->|是| C[开始写作]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    B -->|否| D[安装 VuePress]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    D --> C</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    C --> E[构建并部署]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    E --> F[完成]</span></span></code></pre>
+<div class="language-mermaid line-numbers-mode" data-highlighter="prismjs" data-ext="mermaid"><pre v-pre><code><span class="line"><span class="token keyword">flowchart</span> TD</span>
+<span class="line">    A<span class="token text string">[开始]</span> <span class="token arrow operator">--></span> B<span class="token text string">{是否安装 VuePress?}</span></span>
+<span class="line">    B <span class="token arrow operator">--></span><span class="token label property">|是|</span> C<span class="token text string">[开始写作]</span></span>
+<span class="line">    B <span class="token arrow operator">--></span><span class="token label property">|否|</span> D<span class="token text string">[安装 VuePress]</span></span>
+<span class="line">    D <span class="token arrow operator">--></span> C</span>
+<span class="line">    C <span class="token arrow operator">--></span> E<span class="token text string">[构建并部署]</span></span>
+<span class="line">    E <span class="token arrow operator">--></span> F<span class="token text string">[完成]</span></span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="开始使用" tabindex="-1"><a class="header-anchor" href="#开始使用"><span>开始使用</span></a></h2>
 <p>要开始使用 VuePress 创建你的博客，你需要：</p>
 <ol>

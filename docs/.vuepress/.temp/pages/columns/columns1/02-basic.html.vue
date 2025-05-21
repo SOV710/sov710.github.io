@@ -17,32 +17,33 @@
 </div>
 <h2 id="实践练习" tabindex="-1"><a class="header-anchor" href="#实践练习"><span>实践练习</span></a></h2>
 <p>理论知识需要通过实践来巩固，下面我们来做一个简单的练习：</p>
-<div class="language-js line-numbers-mode" data-highlighter="shiki" data-ext="js" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 练习1：实现一个简单的功能</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> practice1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // 步骤1</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  const</span><span style="--shiki-light:#986801;--shiki-dark:#E5C07B"> data</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> prepareData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">();</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // 步骤2</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  const</span><span style="--shiki-light:#986801;--shiki-dark:#E5C07B"> result</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> processData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">data</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // 步骤3</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  return</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> formatResult</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">result</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token comment">// 练习1：实现一个简单的功能</span></span>
+<span class="line"><span class="token keyword">function</span> <span class="token function">practice1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token comment">// 步骤1</span></span>
+<span class="line">  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token function">prepareData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  </span>
+<span class="line">  <span class="token comment">// 步骤2</span></span>
+<span class="line">  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">processData</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  </span>
+<span class="line">  <span class="token comment">// 步骤3</span></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token function">formatResult</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 辅助函数</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> prepareData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  return</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> { </span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* 初始数据 */</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> };</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"><span class="token comment">// 辅助函数</span></span>
+<span class="line"><span class="token keyword">function</span> <span class="token function">prepareData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token comment">/* 初始数据 */</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> processData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">data</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // 处理数据</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  return</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> { </span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* 处理后的数据 */</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> };</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"><span class="token keyword">function</span> <span class="token function">processData</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token comment">// 处理数据</span></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token comment">/* 处理后的数据 */</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> formatResult</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">result</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // 格式化结果</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  return</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "格式化后的结果"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+<span class="line"><span class="token keyword">function</span> <span class="token function">formatResult</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token comment">// 格式化结果</span></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token string">"格式化后的结果"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="常见问题" tabindex="-1"><a class="header-anchor" href="#常见问题"><span>常见问题</span></a></h2>
 <ol>
 <li>

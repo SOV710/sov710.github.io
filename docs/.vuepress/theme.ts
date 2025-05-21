@@ -8,17 +8,24 @@ export default hopeTheme({
     url: "https://github.com/sov710",
   },
 
-  // Navigation
+  // Enhanced navbar styling
+  navbarLayout: {
+    start: ["Brand"],
+    center: ["Links"],
+    end: ["Search", "Outlook", "Repo"],
+  },
+  
+  // Add logo to navbar
+  logo: "/logo.jpg",
+  logoDark: "/logo.jpg",
+  
+  // Navigation with enhanced styling
   navbar: [
     "/",
     {
-      text: "文章",
+      text: "总结",
       icon: "pen-to-square",
-      prefix: "/posts/",
-      children: [
-        { text: "所有文章", icon: "book", link: "" },
-        { text: "示例文章", icon: "book", link: "article1" },
-      ],
+      link: "/posts/",
     },
     {
       text: "分类",
@@ -35,7 +42,7 @@ export default hopeTheme({
       icon: "book",
       prefix: "/columns/",
       children: [
-        { text: "专栏1", icon: "book", link: "columns1/" },
+        { text: "Intel手册中文翻译", icon: "book", link: "columns1/" },
       ],
     },
     {
@@ -54,7 +61,7 @@ export default hopeTheme({
   sidebar: {
     "/posts/": [
       {
-        text: "文章",
+        text: "总结",
         icon: "book",
         prefix: "",
         children: "structure",
@@ -62,7 +69,7 @@ export default hopeTheme({
     ],
     "/columns/columns1/": [
       {
-        text: "专栏1",
+        text: "Intel手册中文翻译",
         icon: "book",
         prefix: "",
         children: "structure",
@@ -73,7 +80,7 @@ export default hopeTheme({
   // Blog settings
   blog: {
     name: "SOV710's Blog",
-    description: "一个基于VuePress的技术博客",
+    description: "Let's play arch & robotics!",
     intro: "/about.html",
     medias: {
       GitHub: "https://github.com/sov710",
@@ -98,7 +105,6 @@ export default hopeTheme({
 
     // Add search functionality
     search: {
-      provider: "local",
       isSearchable: (page) => page.path !== "/",
       maxSuggestions: 10,
       hotKeys: [{ key: "s", ctrl: true }],
@@ -114,10 +120,37 @@ export default hopeTheme({
     }
   },
 
+  // UI Enhanced features
+  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
+  
+  // Style customization
+  fullscreen: true,
+  pure: false,
+
   // Dark mode settings
   darkmode: "toggle",
 
   // Display footer
   displayFooter: true,
   footer: "MIT Licensed | Copyright © 2024 SOV710",
+
+  // Post-related configurations
+  locales: {
+    "/": {
+      // Modify "Posts" to "Summaries"
+      blogLocales: {
+        article: "总结",
+        articleList: "所有总结",
+        category: "分类",
+        tag: "标签",
+        timeline: "时间线",
+        timelineTitle: "昨日不再！",
+        all: "全部",
+        intro: "个人介绍",
+        star: "收藏",
+        slides: "幻灯片",
+        encrypt: "加密",
+      },
+    },
+  },
 }); 

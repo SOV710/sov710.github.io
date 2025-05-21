@@ -11,16 +11,18 @@
 </ol>
 <h2 id="如何阅读本专栏" tabindex="-1"><a class="header-anchor" href="#如何阅读本专栏"><span>如何阅读本专栏</span></a></h2>
 <p>建议按照文章顺序阅读，每篇文章都是基于前面内容的基础上进行的扩展。</p>
-<div class="language-mermaid line-numbers-mode" data-highlighter="shiki" data-ext="mermaid" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">flowchart LR</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    A[介绍] --> B[基础知识]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    B --> C[进阶技巧]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    C --> D[实战案例]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    D --> E[问题解答]</span></span></code></pre>
+<div class="language-mermaid line-numbers-mode" data-highlighter="prismjs" data-ext="mermaid"><pre v-pre><code><span class="line"><span class="token keyword">flowchart</span> LR</span>
+<span class="line">    A<span class="token text string">[介绍]</span> <span class="token arrow operator">--></span> B<span class="token text string">[基础知识]</span></span>
+<span class="line">    B <span class="token arrow operator">--></span> C<span class="token text string">[进阶技巧]</span></span>
+<span class="line">    C <span class="token arrow operator">--></span> D<span class="token text string">[实战案例]</span></span>
+<span class="line">    D <span class="token arrow operator">--></span> E<span class="token text string">[问题解答]</span></span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="示例代码" tabindex="-1"><a class="header-anchor" href="#示例代码"><span>示例代码</span></a></h2>
-<div class="language-js line-numbers-mode" data-highlighter="shiki" data-ext="js" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> example</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">  console</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"这是一个示例函数"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  return</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "Hello World!"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">function</span> <span class="token function">example</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"这是一个示例函数"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>希望这个专栏对你有所帮助！</p>
 </div></template>
 

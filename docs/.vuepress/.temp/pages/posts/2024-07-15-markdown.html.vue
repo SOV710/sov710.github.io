@@ -43,47 +43,53 @@
 <p>你可以并排展示多个代码块：</p>
 <p>:::: code-group
 ::: code-group-item yarn</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yarn</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> add</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vuepress-theme-hope</span></span></code></pre>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line"><span class="token function">yarn</span> <span class="token function">add</span> vuepress-theme-hope</span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>:<VPIcon icon="" />: code-group-item npm</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">npm</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vuepress-theme-hope</span></span></code></pre>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line"><span class="token function">npm</span> <span class="token function">install</span> vuepress-theme-hope</span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>:<VPIcon icon="" />: code-group-item pnpm</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">pnpm</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> add</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vuepress-theme-hope</span></span></code></pre>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line"><span class="token function">pnpm</span> <span class="token function">add</span> vuepress-theme-hope</span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>:<VPIcon icon="" />::</p>
 <h2 id="图表支持" tabindex="-1"><a class="header-anchor" href="#图表支持"><span>图表支持</span></a></h2>
 <p>除了常规的 Markdown 语法外，VuePress Theme Hope 还支持各种图表：</p>
 <h3 id="流程图" tabindex="-1"><a class="header-anchor" href="#流程图"><span>流程图</span></a></h3>
-<div class="language-flow line-numbers-mode" data-highlighter="shiki" data-ext="flow" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span>st=>start: 开始</span></span>
-<span class="line"><span>op=>operation: 操作</span></span>
-<span class="line"><span>cond=>condition: 是否满足条件？</span></span>
-<span class="line"><span>e=>end: 结束</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>st->op->cond</span></span>
-<span class="line"><span>cond(yes)->e</span></span>
-<span class="line"><span>cond(no)->op</span></span></code></pre>
+<div class="language-flow line-numbers-mode" data-highlighter="prismjs" data-ext="flow"><pre v-pre><code><span class="line">st<span class="token operator">=></span>start<span class="token operator">:</span> 开始</span>
+<span class="line">op<span class="token operator">=></span>operation<span class="token operator">:</span> 操作</span>
+<span class="line">cond<span class="token operator">=></span>condition<span class="token operator">:</span> 是否满足条件？</span>
+<span class="line">e<span class="token operator">=></span>end<span class="token operator">:</span> 结束</span>
+<span class="line"></span>
+<span class="line">st<span class="token operator">-</span><span class="token operator">></span>op<span class="token operator">-</span><span class="token operator">></span>cond</span>
+<span class="line"><span class="token function">cond</span><span class="token punctuation">(</span>yes<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>e</span>
+<span class="line"><span class="token function">cond</span><span class="token punctuation">(</span>no<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>op</span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="echarts-图表" tabindex="-1"><a class="header-anchor" href="#echarts-图表"><span>ECharts 图表</span></a></h3>
-<div class="language-echarts line-numbers-mode" data-highlighter="shiki" data-ext="echarts" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span>{</span></span>
-<span class="line"><span>  "title": {</span></span>
-<span class="line"><span>    "text": "ECharts 示例"</span></span>
-<span class="line"><span>  },</span></span>
-<span class="line"><span>  "tooltip": {},</span></span>
-<span class="line"><span>  "legend": {</span></span>
-<span class="line"><span>    "data": ["销量"]</span></span>
-<span class="line"><span>  },</span></span>
-<span class="line"><span>  "xAxis": {</span></span>
-<span class="line"><span>    "data": ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]</span></span>
-<span class="line"><span>  },</span></span>
-<span class="line"><span>  "yAxis": {},</span></span>
-<span class="line"><span>  "series": [</span></span>
-<span class="line"><span>    {</span></span>
-<span class="line"><span>      "name": "销量",</span></span>
-<span class="line"><span>      "type": "bar",</span></span>
-<span class="line"><span>      "data": [5, 20, 36, 10, 10, 20]</span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span>  ]</span></span>
-<span class="line"><span>}</span></span></code></pre>
+<div class="language-echarts line-numbers-mode" data-highlighter="prismjs" data-ext="echarts"><pre v-pre><code><span class="line">{</span>
+<span class="line">  &quot;title&quot;: {</span>
+<span class="line">    &quot;text&quot;: &quot;ECharts 示例&quot;</span>
+<span class="line">  },</span>
+<span class="line">  &quot;tooltip&quot;: {},</span>
+<span class="line">  &quot;legend&quot;: {</span>
+<span class="line">    &quot;data&quot;: [&quot;销量&quot;]</span>
+<span class="line">  },</span>
+<span class="line">  &quot;xAxis&quot;: {</span>
+<span class="line">    &quot;data&quot;: [&quot;衬衫&quot;, &quot;羊毛衫&quot;, &quot;雪纺衫&quot;, &quot;裤子&quot;, &quot;高跟鞋&quot;, &quot;袜子&quot;]</span>
+<span class="line">  },</span>
+<span class="line">  &quot;yAxis&quot;: {},</span>
+<span class="line">  &quot;series&quot;: [</span>
+<span class="line">    {</span>
+<span class="line">      &quot;name&quot;: &quot;销量&quot;,</span>
+<span class="line">      &quot;type&quot;: &quot;bar&quot;,</span>
+<span class="line">      &quot;data&quot;: [5, 20, 36, 10, 10, 20]</span>
+<span class="line">    }</span>
+<span class="line">  ]</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="导入代码块" tabindex="-1"><a class="header-anchor" href="#导入代码块"><span>导入代码块</span></a></h2>
 <p>你可以导入文件中的代码：</p>
-<div class="language-md line-numbers-mode" data-highlighter="shiki" data-ext="md" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">@</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">[</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">code</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">]</span><span style="--shiki-light:#A626A4;--shiki-dark:#E06C75">(</span><span style="--shiki-light:#A626A4;--shiki-light-text-decoration:inherit;--shiki-dark:#C678DD;--shiki-dark-text-decoration:underline">./example.js</span><span style="--shiki-light:#A626A4;--shiki-dark:#E06C75">)</span></span></code></pre>
+<div class="language-markdown line-numbers-mode" data-highlighter="prismjs" data-ext="md"><pre v-pre><code><span class="line">@<span class="token url">[<span class="token content">code</span>](<span class="token url">./example.js</span>)</span></span>
+<span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="注释" tabindex="-1"><a class="header-anchor" href="#注释"><span>注释</span></a></h2>
 <p>你可以添加注释让内容在页面中隐藏：</p>
 <!-- 这是一条注释，不会显示在页面上 -->

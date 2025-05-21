@@ -15,6 +15,8 @@
     "@vuepress/plugin-blog": "2.0.0-rc.86",
     "@vuepress/plugin-markdown-math": "2.0.0-rc.86",
     "@vuepress/plugin-markdown-stylize": "2.0.0-rc.86",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.105",
+    "@vuepress/plugin-search": "2.0.0-rc.105",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.86",
     "katex": "^0.16.9",
     "sass-embedded": "^1.86.0",

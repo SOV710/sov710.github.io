@@ -3,7 +3,7 @@ home: true
 layout: Blog
 icon: home
 title: SOV710 Blog
-heroImage: /logo.png
+heroImage: /logo.jpg
 heroText: SOV710 Blog
 tagline: Let's play arch & robotics!
 heroFullScreen: true

@@ -1,4 +1,4 @@
-import * as clientConfig0 from '/home/chris/myworld/git/vuepress/docs/.vuepress/.temp/shiki/config.js'
+import * as clientConfig0 from '/home/chris/myworld/git/vuepress/docs/.vuepress/.temp/prismjs/config.js'
 import * as clientConfig1 from '/home/chris/myworld/git/vuepress/docs/.vuepress/.temp/sass-palette/load-hope.js'
 import * as clientConfig2 from '/home/chris/myworld/git/vuepress/docs/.vuepress/.temp/markdown-ext/config.js'
 import * as clientConfig3 from '/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-markdown-hint@2.0.0-rc.104_markdown-it@14.1.0_vue@3.5.14_vuepress@2.0._534301767072f50d535c3fd336c595c6/node_modules/@vuepress/plugin-markdown-hint/lib/client/config.js'
@@ -13,9 +13,10 @@ import * as clientConfig11 from '/home/chris/myworld/git/vuepress/docs/.vuepress
 import * as clientConfig12 from '/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-active-header-links@2.0.0-rc.103_vuepress@2.0.0-rc.23_@vuepress+bundle_59b1375680b2009ba20166e803f5ce68/node_modules/@vuepress/plugin-active-header-links/lib/client/config.js'
 import * as clientConfig13 from '/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-catalog@2.0.0-rc.104_vuepress@2.0.0-rc.23_@vuepress+bundler-vite@2.0.0_456a4e656ad24ef94070f69d86008142/node_modules/@vuepress/plugin-catalog/lib/client/config.js'
 import * as clientConfig14 from '/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-nprogress@2.0.0-rc.104_vuepress@2.0.0-rc.23_@vuepress+bundler-vite@2.0_47a34f08b44f2842dad06b334684948f/node_modules/@vuepress/plugin-nprogress/lib/client/config.js'
-import * as clientConfig15 from '/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-redirect@2.0.0-rc.104_vuepress@2.0.0-rc.23_@vuepress+bundler-vite@2.0._27e9a25f266fbc03cc1ce65b66b4d6e8/node_modules/@vuepress/plugin-redirect/lib/client/config.js'
-import * as clientConfig16 from '/home/chris/myworld/git/vuepress/docs/.vuepress/.temp/theme-hope/config.js'
-import * as clientConfig17 from '/home/chris/myworld/git/vuepress/docs/.vuepress/client.js'
+import * as clientConfig15 from '/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-search@2.0.0-rc.105_vuepress@2.0.0-rc.23_@vuepress+bundler-vite@2.0.0-_2f11ef9425f904f5ed13aed258c966b4/node_modules/@vuepress/plugin-search/lib/client/config.js'
+import * as clientConfig16 from '/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-redirect@2.0.0-rc.104_vuepress@2.0.0-rc.23_@vuepress+bundler-vite@2.0._27e9a25f266fbc03cc1ce65b66b4d6e8/node_modules/@vuepress/plugin-redirect/lib/client/config.js'
+import * as clientConfig17 from '/home/chris/myworld/git/vuepress/docs/.vuepress/.temp/theme-hope/config.js'
+import * as clientConfig18 from '/home/chris/myworld/git/vuepress/docs/.vuepress/client.js'
 
 export const clientConfigs = [
   clientConfig0,
@@ -36,4 +37,5 @@ export const clientConfigs = [
   clientConfig15,
   clientConfig16,
   clientConfig17,
+  clientConfig18,
 ].map((m) => m.default).filter(Boolean)

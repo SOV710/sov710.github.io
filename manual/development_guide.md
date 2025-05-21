@@ -19,7 +19,7 @@
 
 SOV710博客是基于VuePress 2和vuepress-theme-hope主题的个人技术博客。项目具有以下主要特点：
 
-- 使用Markdown撰写文章
+- 使用Markdown撰写总结文章
 - 支持文章分类、标签和专栏
 - 内置评论系统(Giscus)和搜索功能
 - 自动化部署至GitHub Pages
@@ -54,6 +54,12 @@ npm install -g pnpm
 
 # 安装项目依赖
 pnpm install
+
+# 安装搜索插件
+pnpm add -D @vuepress/plugin-search@next
+
+# 安装代码高亮插件
+pnpm add -D @vuepress/plugin-prismjs@next
 ```
 
 ### 启动开发服务器
@@ -82,13 +88,18 @@ vuepress/
 │   │   ├── .cache/         # 缓存目录(自动生成)
 │   │   ├── .temp/          # 临时文件(自动生成)
 │   │   ├── public/         # 静态资源文件
+│   │   │   ├── favicon.ico # 网站图标
+│   │   │   ├── logo.jpg    # 博客Logo
+│   │   │   └── avatar.jpg  # 用户头像
+│   │   ├── styles/         # 样式定制文件
+│   │   │   └── index.scss  # 自定义样式
 │   │   ├── client.js       # 客户端配置
 │   │   ├── config.js       # 主配置文件
 │   │   └── theme.ts        # 主题配置文件
-│   ├── posts/              # 博客文章目录
-│   │   └── article*.md     # 文章文件
+│   ├── posts/              # 博客总结目录
+│   │   └── article*.md     # 总结文件
 │   ├── columns/            # 专栏目录
-│   │   └── columns1/       # 专栏1
+│   │   └── columns1/       # Intel手册中文翻译
 │   ├── README.md           # 首页
 │   ├── about.md            # 关于页面
 │   └── get-started.md      # 快速开始页面
@@ -112,20 +123,25 @@ import theme from "./theme.js";
 export default defineUserConfig({
   lang: 'zh-CN',                          // 站点语言
   title: 'SOV710 Blog',                   // 站点标题
-  description: '一个基于 VuePress 的技术博客', // 站点描述
+  description: 'Let\'s play arch & robotics!', // 站点描述
   
   theme,                                  // 使用配置的主题
   
+  // Use Vite as bundler
+  bundler: viteBundler(),
+  
+  // Markdown configuration
   markdown: {
-    code: {
-      lineNumbers: true,                  // 启用代码行号
-    }
+    highlighter: {
+      // Use PrismJS through theme's integration
+      type: "prismjs",
+      preloadLanguages: ['markdown', 'javascript', 'typescript', 'bash', 'css'],
+    },
   },
   
-  bundler: viteBundler(),                 // 使用Vite作为打包器
-  
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }], // 添加网站图标
+    // Add favicon
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
   ],
 });
 ```
@@ -145,19 +161,37 @@ export default hopeTheme({
     url: "https://github.com/sov710",    // 作者链接
   },
 
+  // 增强导航栏样式
+  navbarLayout: {
+    start: ["Brand"],                    // 左侧显示品牌
+    center: ["Links"],                   // 中间显示链接
+    end: ["Search", "Outlook", "Repo"],  // 右侧显示搜索和其他
+  },
+  
+  // 添加导航栏logo
+  logo: "/logo.jpg",                     // 亮色模式logo
+  logoDark: "/logo.jpg",                 // 暗色模式logo
+  
   // 导航栏配置
   navbar: [
     "/",                                  // 首页
     {
-      text: "文章",                       // 导航项标题
+      text: "总结",                       // 导航项标题
       icon: "pen-to-square",             // 图标
       prefix: "/posts/",                 // 路径前缀
       children: [                        // 子导航项
-        { text: "所有文章", icon: "book", link: "" },
-        { text: "示例文章", icon: "book", link: "article1" },
+        { text: "所有总结", icon: "book", link: "" },
       ],
     },
     // 其他导航项...
+    {
+      text: "专栏",
+      icon: "book",
+      prefix: "/columns/",
+      children: [
+        { text: "Intel手册中文翻译", icon: "book", link: "columns1/" },
+      ],
+    },
     {
       text: "关于我",                    // 关于我页面
       icon: "user",                      // 用户图标
@@ -169,19 +203,26 @@ export default hopeTheme({
   sidebar: {
     "/posts/": [
       {
-        text: "文章",
+        text: "总结",
         icon: "book",
         prefix: "",
         children: "structure",           // 自动生成侧边栏
       },
     ],
-    // 其他侧边栏配置...
+    "/columns/columns1/": [
+      {
+        text: "Intel手册中文翻译",
+        icon: "book",
+        prefix: "",
+        children: "structure",           // 自动生成侧边栏
+      },
+    ],
   },
 
   // 博客设置
   blog: {
     name: "SOV710's Blog",
-    description: "一个基于VuePress的技术博客",
+    description: "Let's play arch & robotics!",
     intro: "/about.html",                // 博主信息页面
     medias: {
       GitHub: "https://github.com/sov710", // 社交媒体链接
@@ -197,10 +238,9 @@ export default hopeTheme({
     components: {
       components: ["Badge"]              // 启用Badge组件
     },
-    
-    // 搜索功能配置
+
+    // 搜索功能配置 
     search: {
-      provider: "local",                 // 使用本地搜索
       isSearchable: (page) => page.path !== "/", // 排除首页
       maxSuggestions: 10,                // 最大建议数
       hotKeys: [{ key: "s", ctrl: true }], // 快捷键Ctrl+S
@@ -217,12 +257,39 @@ export default hopeTheme({
     }
   },
 
+  // UI增强功能
+  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
+  
+  // 样式定制
+  fullscreen: true,                      // 支持全屏
+  pure: false,                           // 非纯净模式
+  
   // 深色模式设置
   darkmode: "toggle",                    // 深色模式切换
 
   // 页脚配置
   displayFooter: true,                   // 显示页脚
   footer: "MIT Licensed | Copyright © 2024 SOV710", // 页脚内容
+  
+  // 博客文本本地化
+  locales: {
+    "/": {
+      // 修改 "Posts" 为 "Summaries"
+      blogLocales: {
+        article: "总结",
+        articleList: "所有总结",
+        category: "分类",
+        tag: "标签",
+        timeline: "时间线",
+        timelineTitle: "昨日不再！",
+        all: "全部",
+        intro: "个人介绍",
+        star: "收藏",
+        slides: "幻灯片",
+        encrypt: "加密",
+      },
+    },
+  },
 });
 ```
 
@@ -241,48 +308,151 @@ export default defineClientConfig({
 
 ## 5. 主题定制
 
-### 颜色主题定制
+### 自定义样式文件
 
-要自定义主题颜色，可以创建`.vuepress/styles/index.scss`文件：
+在`.vuepress/styles/index.scss`中创建自定义样式，增强导航栏和其他UI元素：
 
 ```scss
-// 自定义主题颜色
-:root {
-  // 品牌颜色
-  --c-brand: #3eaf7c;
-  --c-brand-light: #4abf8a;
+/**
+ * Custom styles for the blog
+ */
 
-  // 背景颜色
-  --c-bg: #ffffff;
-  --c-bg-light: #f3f4f5;
-  --c-bg-lighter: #eeeeee;
+/* Navbar styling */
+.navbar {
+  backdrop-filter: blur(5px);
+  background-color: rgba(var(--bg-color), 0.8) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 
-  // 文本颜色
-  --c-text: #2c3e50;
-  --c-text-light: #3a5169;
-  --c-text-lighter: #4e6e8e;
-  --c-text-lightest: #6a8bad;
+  .site-name {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    .nav-item > a {
+      font-weight: 500;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        color: var(--c-brand);
+        background-color: rgba(var(--c-brand), 0.1);
+        transform: translateY(-2px);
+      }
+    }
+    
+    .dropdown-wrapper .dropdown-title {
+      font-weight: 500;
+    }
+    
+    .dropdown-wrapper .nav-dropdown {
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      padding: 0.6rem 0;
+      
+      .dropdown-item {
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background-color: rgba(var(--c-brand), 0.1);
+        }
+        
+        a {
+          padding: 0.5rem 1.5rem;
+          
+          &.router-link-active {
+            color: var(--c-brand);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
 }
 
-// 深色模式颜色
-html.dark {
-  --c-brand: #3aa675;
-  --c-brand-light: #349469;
+/* 搜索框样式美化 */
+.search-box {
+  margin-right: 0.5rem;
+  
+  input {
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    background-color: rgba(127, 127, 127, 0.1);
+    
+    &:focus {
+      border-color: var(--c-brand);
+      box-shadow: 0 0 0 2px rgba(var(--c-brand), 0.1);
+    }
+  }
+  
+  .suggestions {
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    
+    .suggestion {
+      padding: 0.6rem 0.8rem;
+      
+      a {
+        font-weight: 500;
+        
+        .page-title {
+          font-weight: 600;
+        }
+      }
+      
+      &.focused {
+        background-color: rgba(var(--c-brand), 0.1);
+      }
+    }
+  }
+}
 
-  --c-bg: #1e1e1e;
-  --c-bg-light: #252525;
-  --c-bg-lighter: #313131;
-
-  --c-text: #f0f0f0;
-  --c-text-light: #d8d8d8;
-  --c-text-lighter: #bbbbbb;
-  --c-text-lightest: #999999;
+/* 项目卡片样式美化 */
+.project-panel {
+  .project {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    .icon {
+      padding: 1.5rem;
+      font-size: 1.8rem;
+      background: linear-gradient(to right bottom, var(--c-brand), #6d4ea3);
+      color: white;
+    }
+    
+    .name {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    .desc {
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+  }
 }
 ```
 
-### 自定义布局
+### 颜色主题定制
 
-如需自定义主题布局，可以在`.vuepress/theme/layouts`目录下创建自定义布局组件。
+要自定义主题颜色，可以在`.vuepress/styles/palette.scss`文件中设置：
+
+```scss
+// 颜色变量
+$theme-color: #3eaf7c;
+$text-color: #2c3e50;
+$bg-color: #ffffff;
+$bg-color-secondary: #f8f8f8;
+$border-color: #eaecef;
+```
 
 ### 响应式设计
 
@@ -300,7 +470,7 @@ home: true
 layout: Blog
 icon: home
 title: SOV710 Blog
-heroImage: /logo.png
+heroImage: /logo.jpg
 heroText: SOV710 Blog
 tagline: Let's play arch & robotics!
 heroFullScreen: true
@@ -333,9 +503,9 @@ footer: MIT Licensed | Copyright © 2025 SOV710
 | 实心图标 | `fa-solid fa-book-open` | 用于展示书籍、文章等内容 |
 | 轮廓图标 | `fa-regular fa-user` | 用于展示用户、设置等 |
 
-### 文章创建
+### 总结创建
 
-文章位于`docs/posts/`目录下，使用Markdown格式：
+总结文章位于`docs/posts/`目录下，使用Markdown格式：
 
 ```markdown
 ---
@@ -347,7 +517,7 @@ tag:
   - tag B
 ---
 
-# 文章标题
+# 总结标题
 
 ## 二级标题
 
@@ -385,15 +555,15 @@ tag:
 
 ```markdown
 ---
-title: 专栏1第一篇
+title: Intel手册中文翻译第一篇
 order: 1
 category:
-  - 专栏1
+  - Intel手册中文翻译
 tag:
   - 入门
 ---
 
-# 专栏1第一篇
+# Intel手册中文翻译第一篇
 
 专栏内容...
 ```
@@ -452,29 +622,58 @@ jobs:
 
 ### 搜索功能配置
 
-本项目使用本地搜索功能，配置如下：
+本项目同时使用了两种搜索方式，可以根据需要选择其中一种：
+
+#### 方法1: 使用主题内置的搜索功能
+
+在`theme.ts`中配置:
 
 ```js
 plugins: {
   // 其他插件配置...
   search: {
-    provider: "local",
     isSearchable: (page) => page.path !== "/",
     maxSuggestions: 10,
     hotKeys: [{ key: "s", ctrl: true }],
     locales: {
       '/': {
-        placeholder: '搜索文档',
+        placeholder: "搜索文档",
       },
     },
   },
+  
+  icon: {
+    assets: "fontawesome",
+  }
 }
 ```
 
-使用方法：
-- 点击导航栏中的搜索图标
-- 使用快捷键 `Ctrl + S` 打开搜索
-- 在搜索框中输入关键词进行搜索
+#### 方法2: 使用外部搜索插件
+
+1. 安装搜索插件：
+```bash
+pnpm add -D @vuepress/plugin-search@next
+```
+
+2. 在`config.js`中配置插件：
+```js
+import { searchPlugin } from '@vuepress/plugin-search'
+
+// 在plugins数组中添加
+plugins: [
+  searchPlugin({
+    locales: {
+      '/': {
+        placeholder: '搜索博客...',
+      },
+    },
+    maxSuggestions: 10,
+    hotKeys: ['s', '/'],
+    isSearchable: (page) => page.path !== '/',
+    getExtraFields: () => [],
+  }),
+]
+```
 
 ### 评论系统配置
 
@@ -490,9 +689,9 @@ plugins: {
   comment: {
     provider: "Giscus",
     repo: "sov710/sov710.github.io",
-    repoId: "你的repoId",
+    repoId: "your-repo-id",
     category: "Announcements",
-    categoryId: "你的categoryId",
+    categoryId: "your-category-id",
     mapping: "pathname",
     reactionsEnabled: true,
     inputPosition: "bottom",
@@ -542,10 +741,12 @@ flowchart LR
 #### 4. 代码块
 
 ````markdown
-```js
+```javascript
 console.log('Hello World!');
 ```
 ````
+
+> 注意：代码块中的语言标识必须完整拼写，例如使用`javascript`而不是简写的`js`，以避免渲染错误。
 
 ## 9. 性能优化
 
@@ -586,11 +787,32 @@ pnpm docs:update-package
 1. `layout: BlogHome in frontmatter is deprecated`
    - 将 `layout: BlogHome` 改为 `layout: Blog`
 
-2. `You are setting "markdown.lineNumbers" option in vuepress config file`
-   - 将 `markdown: { lineNumbers: true }` 改为 `markdown: { code: { lineNumbers: true } }`
+2. `You are setting "markdown.code" option in vuepress config file`
+   - 不要直接在config.js中使用`markdown.lineNumbers`或`markdown.code`
+   - 应该使用主题中配置 Markdown highlighter：
+   ```js
+   markdown: {
+     highlighter: {
+       type: "prismjs",
+       preloadLanguages: ['markdown', 'javascript', 'typescript', 'bash', 'css'],
+     },
+   }
+   ```
 
 3. `Missing flow highlighter, skip highlighting`
    - 可以忽略或安装相应的语法高亮插件
+   - 或者在prismjsPlugin配置中指定需要预加载的语言
+
+4. `@vuepress/plugin-search is not installed!`
+   - 运行 `pnpm add -D @vuepress/plugin-search@next` 安装插件
+   - 在config.js中正确配置searchPlugin
+   
+5. `Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@vuepress/plugin-prismjs'`
+   - 运行 `pnpm add -D @vuepress/plugin-prismjs@next` 安装插件
+
+6. `Element is missing end tag` 错误
+   - 检查Markdown代码块，确保使用完整的语言标识，例如使用 `javascript` 而不是 `js`
+   - 确保代码块开始和结束标记正确（三个反引号）
 
 ### Q: 如何在开发环境调试评论系统？
 
