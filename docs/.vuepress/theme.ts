@@ -43,6 +43,11 @@ export default hopeTheme({
       icon: "clock",
       link: "/timeline/",
     },
+    {
+      text: "关于我",
+      icon: "user",
+      link: "/about.html",
+    },
   ],
 
   // Sidebar configuration
@@ -76,7 +81,7 @@ export default hopeTheme({
     articleInfo: ["Date", "Category", "Tag", "ReadingTime"],
   },
 
-  // Plugin configuration - use minimal settings
+  // Plugin configuration
   plugins: {
     blog: true,
     
@@ -89,6 +94,23 @@ export default hopeTheme({
     // Components
     components: {
       components: ["Badge"]
+    },
+
+    // Add search functionality
+    search: {
+      provider: "local",
+      isSearchable: (page) => page.path !== "/",
+      maxSuggestions: 10,
+      hotKeys: [{ key: "s", ctrl: true }],
+      locales: {
+        "/": {
+          placeholder: "搜索文档",
+        },
+      },
+    },
+
+    icon: {
+      assets: "fontawesome",
     }
   },
 

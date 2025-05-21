@@ -1,6 +1,6 @@
 ---
 home: true
-layout: BlogHome
+layout: Blog
 icon: home
 title: SOV710 Blog
 heroImage: /logo.png
@@ -8,32 +8,32 @@ heroText: SOV710 Blog
 tagline: Let's play arch & robotics!
 heroFullScreen: true
 projects:
-  - icon: project
+  - icon: fa-brands fa-github
     name: Github
     desc: 博主的github喵
     link: https://github.com/SOV710
 
-  - icon: link
+  - icon: fa-brands fa-zhihu
     name: 知乎
     desc: 博主的知乎链接喵
     link: https://www.zhihu.com/people/sov710
 
-  - icon: book
+  - icon: fa-solid fa-book-open
     name: 书籍名称
     desc: 书籍详细描述
     link: https://你的书籍链接
 
-  - icon: article
+  - icon: fa-solid fa-file-lines
     name: 文章名称
     desc: 文章详细描述
     link: https://你的文章链接
 
-  - icon: friend
+  - icon: fa-solid fa-user-group
     name: 伙伴名称
     desc: 伙伴详细描述
     link: https://你的伙伴链接
 
-  - icon: /logo.png
+  - icon: fa-solid fa-rocket
     name: 自定义项目
     desc: 自定义详细描述
     link: https://你的自定义链接

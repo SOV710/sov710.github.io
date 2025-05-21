@@ -3,8 +3,8 @@
 <h2 id="任务列表" tabindex="-1"><a class="header-anchor" href="#任务列表"><span>任务列表</span></a></h2>
 <p>你可以使用任务列表来展示待办事项：</p>
 <ul>
-<li>[x] 计划任务 1</li>
-<li>[x] 计划任务 2</li>
+<li>[X] 计划任务 1</li>
+<li>[X] 计划任务 2</li>
 <li>[ ] 计划任务 3</li>
 </ul>
 <h2 id="自定义容器" tabindex="-1"><a class="header-anchor" href="#自定义容器"><span>自定义容器</span></a></h2>

@@ -41,7 +41,7 @@ graph TD
 
 ## 2. 开发环境搭建
 
-### 安装依赖OV710博客是基于VuePress 2和v
+### 安装依赖
 
 确保已安装Node.js (推荐v18+)和pnpm。
 
@@ -102,7 +102,7 @@ vuepress/
 
 ### config.js
 
-VuePress的主配置文件，位于 `.vuepress/config.js`：
+VuePress的主配置文件，位于`.vuepress/config.js`：
 
 ```js
 import { defineUserConfig } from 'vuepress'
@@ -117,7 +117,9 @@ export default defineUserConfig({
   theme,                                  // 使用配置的主题
   
   markdown: {
-    lineNumbers: true,                    // 启用代码行号
+    code: {
+      lineNumbers: true,                  // 启用代码行号
+    }
   },
   
   bundler: viteBundler(),                 // 使用Vite作为打包器
@@ -130,7 +132,7 @@ export default defineUserConfig({
 
 ### theme.ts
 
-主题配置文件，位于 `.vuepress/theme.ts`：
+主题配置文件，位于`.vuepress/theme.ts`：
 
 ```js
 import { hopeTheme } from "vuepress-theme-hope";
@@ -156,6 +158,11 @@ export default hopeTheme({
       ],
     },
     // 其他导航项...
+    {
+      text: "关于我",                    // 关于我页面
+      icon: "user",                      // 用户图标
+      link: "/about.html",               // 链接到about.html
+    },
   ],
 
   // 侧边栏配置
@@ -189,6 +196,24 @@ export default hopeTheme({
     catalog: {},                         // 启用自动目录
     components: {
       components: ["Badge"]              // 启用Badge组件
+    },
+    
+    // 搜索功能配置
+    search: {
+      provider: "local",                 // 使用本地搜索
+      isSearchable: (page) => page.path !== "/", // 排除首页
+      maxSuggestions: 10,                // 最大建议数
+      hotKeys: [{ key: "s", ctrl: true }], // 快捷键Ctrl+S
+      locales: {
+        "/": {
+          placeholder: "搜索文档",        // 搜索框占位符
+        },
+      },
+    },
+    
+    // 图标配置
+    icon: {
+      assets: "fontawesome",             // 使用FontAwesome图标
     }
   },
 
@@ -203,7 +228,7 @@ export default hopeTheme({
 
 ### client.js
 
-客户端配置文件，位于 `.vuepress/client.js`：
+客户端配置文件，位于`.vuepress/client.js`：
 
 ```js
 import { defineClientConfig } from 'vuepress/client'
@@ -218,7 +243,7 @@ export default defineClientConfig({
 
 ### 颜色主题定制
 
-要自定义主题颜色，可以创建 `.vuepress/styles/index.scss`文件：
+要自定义主题颜色，可以创建`.vuepress/styles/index.scss`文件：
 
 ```scss
 // 自定义主题颜色
@@ -257,7 +282,7 @@ html.dark {
 
 ### 自定义布局
 
-如需自定义主题布局，可以在 `.vuepress/theme/layouts`目录下创建自定义布局组件。
+如需自定义主题布局，可以在`.vuepress/theme/layouts`目录下创建自定义布局组件。
 
 ### 响应式设计
 
@@ -267,37 +292,50 @@ vuepress-theme-hope已内置响应式设计，会自动适配不同屏幕尺寸�
 
 ### 首页配置
 
-首页配置位于 `docs/README.md`，使用Frontmatter配置：
+首页配置位于`docs/README.md`，使用Frontmatter配置：
 
 ```markdown
 ---
 home: true
-layout: BlogHome
+layout: Blog
 icon: home
 title: SOV710 Blog
 heroImage: /logo.png
 heroText: SOV710 Blog
-tagline: 一个基于 VuePress 的技术博客
+tagline: Let's play arch & robotics!
 heroFullScreen: true
 projects:
-  - icon: project
-    name: 项目名称
-    desc: 项目详细描述
-    link: https://你的项目链接
+  - icon: fa-brands fa-github
+    name: Github
+    desc: 博主的github喵
+    link: https://github.com/SOV710
+
+  - icon: fa-brands fa-zhihu
+    name: 知乎
+    desc: 博主的知乎链接喵
+    link: https://www.zhihu.com/people/sov710
 
   # 更多项目...
 
-footer: MIT Licensed | Copyright © 2024 SOV710
+footer: MIT Licensed | Copyright © 2025 SOV710
 ---
-
-## 最新文章
-
-这里是最新文章列表，由主题自动生成...
 ```
+
+> 注意：使用`layout: Blog`而不是`layout: BlogHome`，这是VuePress 2的推荐用法。
+
+### 项目图标配置
+
+在首页中，可以使用FontAwesome图标来美化项目展示：
+
+| 图标类型 | 图标代码示例 | 说明 |
+|---------|------------|------|
+| 品牌图标 | `fa-brands fa-github` | 用于展示品牌，如GitHub、知乎等 |
+| 实心图标 | `fa-solid fa-book-open` | 用于展示书籍、文章等内容 |
+| 轮廓图标 | `fa-regular fa-user` | 用于展示用户、设置等 |
 
 ### 文章创建
 
-文章位于 `docs/posts/`目录下，使用Markdown格式：
+文章位于`docs/posts/`目录下，使用Markdown格式：
 
 ```markdown
 ---
@@ -322,24 +360,24 @@ tag:
 
 #### Frontmatter配置项
 
-| 配置项      | 说明                 | 示例值                    |
-| ----------- | -------------------- | ------------------------- |
-| title       | 文章标题             | "VuePress入门"            |
-| date        | 发布日期             | 2022-01-01                |
-| category    | 文章分类(单个或数组) | "前端" 或 ["前端", "Vue"] |
-| tag         | 文章标签(数组)       | ["VuePress", "博客"]      |
-| sticky      | 是否置顶             | true                      |
-| star        | 是否加星             | true                      |
-| order       | 排序权重             | 1                         |
-| author      | 作者                 | "SOV710"                  |
-| description | 描述                 | "这篇文章介绍VuePress"    |
-| cover       | 封面图               | "/images/cover.jpg"       |
+| 配置项     | 说明                     | 示例值                  |
+|------------|--------------------------|-------------------------|
+| title      | 文章标题                 | "VuePress入门"          |
+| date       | 发布日期                 | 2022-01-01              |
+| category   | 文章分类(单个或数组)     | "前端" 或 ["前端", "Vue"] |
+| tag        | 文章标签(数组)           | ["VuePress", "博客"]    |
+| sticky     | 是否置顶                 | true                   |
+| star       | 是否加星                 | true                   |
+| order      | 排序权重                 | 1                      |
+| author     | 作者                     | "SOV710"               |
+| description| 描述                     | "这篇文章介绍VuePress" |
+| cover      | 封面图                   | "/images/cover.jpg"    |
 
 ### 专栏创建
 
-专栏是一系列相关文章的集合，可以在 `docs/columns/`目录下创建：
+专栏是一系列相关文章的集合，可以在`docs/columns/`目录下创建：
 
-1. 创建专栏目录，如 `docs/columns/columns1/`
+1. 创建专栏目录，如`docs/columns/columns1/`
 2. 在专栏目录中添加文章，使用Frontmatter定义顺序
 3. 在主题配置中定义专栏侧边栏
 
@@ -364,10 +402,10 @@ tag:
 
 ### GitHub Pages部署
 
-1. 创建GitHub仓库(例如 `sov710.github.io`)
+1. 创建GitHub仓库(例如`sov710.github.io`)
 2. 配置GitHub Actions工作流
 
-在项目根目录创建 `.github/workflows/deploy.yml`：
+在项目根目录创建`.github/workflows/deploy.yml`：
 
 ```yaml
 name: Deploy VuePress site to GitHub Pages
@@ -407,10 +445,36 @@ jobs:
 
 ### 自定义域名配置
 
-1. 在DNS提供商处添加CNAME记录指向 `sov710.github.io`
-2. 在 `.vuepress/public`目录下创建 `CNAME`文件，内容为自定义域名
+1. 在DNS提供商处添加CNAME记录指向`sov710.github.io`
+2. 在`.vuepress/public`目录下创建`CNAME`文件，内容为自定义域名
 
 ## 8. 功能扩展
+
+### 搜索功能配置
+
+本项目使用本地搜索功能，配置如下：
+
+```js
+plugins: {
+  // 其他插件配置...
+  search: {
+    provider: "local",
+    isSearchable: (page) => page.path !== "/",
+    maxSuggestions: 10,
+    hotKeys: [{ key: "s", ctrl: true }],
+    locales: {
+      '/': {
+        placeholder: '搜索文档',
+      },
+    },
+  },
+}
+```
+
+使用方法：
+- 点击导航栏中的搜索图标
+- 使用快捷键 `Ctrl + S` 打开搜索
+- 在搜索框中输入关键词进行搜索
 
 ### 评论系统配置
 
@@ -438,23 +502,6 @@ plugins: {
 
 详细配置请参考[Giscus配置指南](./giscus_docs.md)。
 
-### 搜索功能配置
-
-vuepress-theme-hope默认使用slimsearch插件提供搜索功能：
-
-```js
-plugins: {
-  // 其他插件配置...
-  search: {
-    locales: {
-      '/': {
-        placeholder: '搜索',
-      },
-    },
-  },
-}
-```
-
 ### Markdown增强功能
 
 VuePress和vuepress-theme-hope支持多种Markdown增强功能：
@@ -468,10 +515,7 @@ $$ E = mc^2 $$
 ```
 
 渲染效果:
-
-$$
-E = mc^2
-$$
+$$ E = mc^2 $$
 
 #### 2. 流程图
 
@@ -537,13 +581,24 @@ pnpm docs:update-package
 2. 检查依赖: `pnpm install`
 3. 检查配置文件语法错误
 
+### Q: 如何解决常见警告？
+
+1. `layout: BlogHome in frontmatter is deprecated`
+   - 将 `layout: BlogHome` 改为 `layout: Blog`
+
+2. `You are setting "markdown.lineNumbers" option in vuepress config file`
+   - 将 `markdown: { lineNumbers: true }` 改为 `markdown: { code: { lineNumbers: true } }`
+
+3. `Missing flow highlighter, skip highlighting`
+   - 可以忽略或安装相应的语法高亮插件
+
 ### Q: 如何在开发环境调试评论系统？
 
-评论系统通常需要在生产环境正常工作。可以临时在 `theme.ts`中添加测试仓库进行调试。
+评论系统通常需要在生产环境正常工作。可以临时在`theme.ts`中添加测试仓库进行调试。
 
 ### Q: 如何自定义404页面？
 
-在 `docs/.vuepress/public`目录下创建 `404.html`文件。
+在`docs/.vuepress/public`目录下创建`404.html`文件。
 
 ---
 

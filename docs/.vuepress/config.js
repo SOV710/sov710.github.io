@@ -12,7 +12,9 @@ export default defineUserConfig({
   
   // Configure Markdown
   markdown: {
-    lineNumbers: true,
+    code: {
+      lineNumbers: true,
+    }
   },
   
   // Use Vite as bundler

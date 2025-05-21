@@ -10,7 +10,7 @@ export default {
         "VPIcon",
         (props) =>
           h(VPIcon, {
-            type: "iconify",
+            type: "fontawesome",
             prefix: "",
             ...props,
           })
@@ -18,6 +18,23 @@ export default {
     }
   },
   setup: () => {
-    useScriptTag(`https://cdn.jsdelivr.net/npm/iconify-icon@2`);
+    useScriptTag(
+  `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/solid.min.js`,
+  () => {},
+  { attrs: { "data-auto-replace-svg": "nest" } }
+);
+
+    useScriptTag(
+  `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/regular.min.js`,
+  () => {},
+  { attrs: { "data-auto-replace-svg": "nest" } }
+);
+
+    useScriptTag(
+  `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/fontawesome.min.js`,
+  () => {},
+  { attrs: { "data-auto-replace-svg": "nest" } }
+);
+
   },
 }
