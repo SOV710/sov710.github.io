@@ -1,0 +1,26 @@
+{
+  "name": "sov710-blog",
+  "description": "SOV710's blog",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "docs:build": "vuepress build docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:dev": "vuepress dev docs",
+    "docs:update-package": "pnpm dlx vp-update"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.23",
+    "@vuepress/plugin-blog": "2.0.0-rc.86",
+    "@vuepress/plugin-markdown-math": "2.0.0-rc.86",
+    "@vuepress/plugin-markdown-stylize": "2.0.0-rc.86",
+    "@vuepress/plugin-slimsearch": "2.0.0-rc.86",
+    "katex": "^0.16.9",
+    "sass-embedded": "^1.86.0",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.23",
+    "vuepress-theme-hope": "2.0.0-rc.88"
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
+}
