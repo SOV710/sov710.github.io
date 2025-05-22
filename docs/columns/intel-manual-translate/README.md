@@ -62,6 +62,7 @@ category:
 ## 专栏目录
 
 - [第一章 关于本手册](./01-about-this-manual.md)
+- [第七章 中断和异常处理](./07-interrupt-and-exception-handling.md)
 
 ## 参考资料
 
