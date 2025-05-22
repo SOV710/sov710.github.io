@@ -64,7 +64,7 @@ comment: false
 <div class="apply-container">
   <div class="apply-title">申请友链</div>
   <div class="apply-desc">
-    可以通过以下方式联系我喵~：
+    可以通过以下方式联系我：
 
     - 邮箱: chris916911179@outlook.com
     - GitHub: https://github.com/sov710

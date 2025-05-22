@@ -1,6 +1,6 @@
 <template><div><h1 id="_25-mar-4th-周总结" tabindex="-1"><a class="header-anchor" href="#_25-mar-4th-周总结"><span>25 Mar 4th 周总结</span></a></h1>
 <figure><img src="/posts/w-250304-cover.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>受<a href="https://zhuanlan.zhihu.com/p/32249476137" target="_blank" rel="noopener noreferrer">Kinnariya：2025 第 12 周总结</a>的启发，做的第一次总结，多担待喵~</p>
+<p>受<a href="https://zhuanlan.zhihu.com/p/32249476137" target="_blank" rel="noopener noreferrer">Kinnariya：2025 第 12 周总结</a>的启发，做的第一次总结，多担待</p>
 <p>现在回过头再来看我的学习路线，欣慰的看到大部分时候没有勉强自己做什么事，一直做的都是感兴趣的事，一直学的都是还算热爱的东西，一直都还算是比较松弛地走过来了，真是太好了</p>
 <h3 id="之前做了什么" tabindex="-1"><a class="header-anchor" href="#之前做了什么"><span>之前做了什么</span></a></h3>
 <ul>
@@ -8,7 +8,7 @@
 <li>算法竞赛真的很让人热血沸腾啊，但是可惜比不过那些童子功，算了</li>
 <li>一边玩的时候一边进了（竞赛）实验室，也不知道去干啥，纯当自习室了（有点后悔进实验室，这点后面吐槽的时候说</li>
 <li>期末考试依托史</li>
-<li>寒假接触neovim后高潮了，顺带着将各种工具链都折腾了一遍，开始不断向底层折腾之旅，详见链接（玩得最开心的时光喵~</li>
+<li>寒假接触neovim后高潮了，顺带着将各种工具链都折腾了一遍，开始不断向底层折腾之旅，详见链接（玩得最开心的时光</li>
 <li>寒假后半段又小摸了一阵子csapp（听说lab豪玩），后来因为要玩gentoo而放弃</li>
 <li>开学前几天感觉Ubuntu可玩性太低了，然后染上了 Linux 原神之一 Gentoo , 导致我在开学前两周没电脑用，最蠢的是最后因为玩不明白 Xorg 和 TTY 装不明白 Clash 退回 Ubuntu（恼） 改天一定要装回来</li>
 </ul>
@@ -25,7 +25,7 @@
 <li>这↑踏马仙人，怎么有人能一周做那么多事的</li>
 <li>过几天大概会发一篇关于Intel/Linux中断设计的笔记性文章，这一块的水比我想象中的要深，已经进入CPU微架构，再看下去要开始看intel manual了（悲</li>
 <li>那个毕设项目还得继续跟，但是实在不知道为什么用户认证逻辑做不出来；至今没搞清楚cookies到底是在前端没发出去，还是在浏览器被拦截了，还是后端没检测到cookies被惨遭403……之前调了两天实在调不动放手了，梳理一下项目脉络，等实验室一个做前端的哥们回来后问问他</li>
-<li>到处水群，感谢愿意和我聊天的群友喵~♥️</li>
+<li>到处水群，感谢愿意和我聊天的群友</li>
 </ul>
 <h3 id="下周打算做" tabindex="-1"><a class="header-anchor" href="#下周打算做"><span>下周打算做</span></a></h3>
 <ul>

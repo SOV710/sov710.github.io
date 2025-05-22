@@ -11,12 +11,12 @@ heroFullScreen: true
 projects:
   - icon: fa-brands fa-github
     name: Github
-    desc: 博主的github喵
+    desc: 博主的github
     link: https://github.com/SOV710
 
   - icon: fa-brands fa-zhihu
     name: 知乎
-    desc: 博主的知乎链接喵
+    desc: 博主的知乎链接
     link: https://www.zhihu.com/people/sov710
 
   - icon: fa-solid fa-file-lines
