@@ -4,30 +4,9 @@ export const SEARCH_INDEX = [
     "headers": [
       {
         "level": 2,
-        "title": "站点介绍",
-        "slug": "站点介绍",
-        "link": "#站点介绍",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "博主介绍",
-        "slug": "博主介绍",
-        "link": "#博主介绍",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "本站特色",
-        "slug": "本站特色",
-        "link": "#本站特色",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "技术栈",
-        "slug": "技术栈",
-        "link": "#技术栈",
+        "title": "Who am I?",
+        "slug": "who-am-i",
+        "link": "#who-am-i",
         "children": []
       },
       {
@@ -53,113 +32,6 @@ export const SEARCH_INDEX = [
     "title": "朋友们",
     "headers": [],
     "path": "/friends.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Get Started",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Pages",
-        "slug": "pages",
-        "link": "#pages",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Content",
-        "slug": "content",
-        "link": "#content",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Configuration",
-        "slug": "configuration",
-        "link": "#configuration",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Layouts and customization",
-        "slug": "layouts-and-customization",
-        "link": "#layouts-and-customization",
-        "children": []
-      }
-    ],
-    "path": "/get-started.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Markdown Test",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Bold Text Test",
-        "slug": "bold-text-test",
-        "link": "#bold-text-test",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Table Test (General)",
-        "slug": "table-test-general",
-        "link": "#table-test-general",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Specific Table Test (Interrupts)",
-        "slug": "specific-table-test-interrupts",
-        "link": "#specific-table-test-interrupts",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Container Test",
-        "slug": "container-test",
-        "link": "#container-test",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Task List Test",
-        "slug": "task-list-test",
-        "link": "#task-list-test",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Text Alignment Test",
-        "slug": "text-alignment-test",
-        "link": "#text-alignment-test",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Mark Test",
-        "slug": "mark-test",
-        "link": "#mark-test",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Footnote Test",
-        "slug": "footnote-test",
-        "link": "#footnote-test",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Other Formatting",
-        "slug": "other-formatting",
-        "link": "#other-formatting",
-        "children": []
-      }
-    ],
-    "path": "/test-markdown.html",
     "pathLocale": "/",
     "extraFields": []
   },

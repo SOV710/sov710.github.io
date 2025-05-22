@@ -21,8 +21,7 @@ projects:
 
   - icon: fa-solid fa-file-lines
     name: Intel手册中文翻译
-    desc: 也可以参见我的知乎文章
-    link: https://sov710.github.io/column
+    link: /columns/intel-manual-translate/
 
 footer: MIT Licensed | Copyright © 2025 SOV710
 ---
