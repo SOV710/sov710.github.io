@@ -11,8 +11,8 @@
 <p>此外，第 3B 和第 3C 卷还涉及了<strong>承载操作系统的软件类别的编程环境</strong>（例如虚拟机监控器等）。<br>
 第 4 卷则专门描述了 Intel 64 与 IA-32 处理器的<strong>型号特定寄存器（MSRs）</strong>。</p>
 <div class="hint-container tip">
-<p class="hint-container-title">注意</p>
-<p>译者注：这个专栏翻译的部分是intel manual volume 3，也就是3A, 3B, 3C, &amp; 3D部分（也是我们一般语境下的intel手册），不涉及其他部分</p>
+<p class="hint-container-title">译者注</p>
+<p>这个专栏翻译的部分是intel manual volume 3，也就是3A, 3B, 3C, &amp; 3D部分（也是我们一般语境下的intel手册），不涉及其他部分</p>
 </div>
 <h2 id="_1-1-系统编程指南概述" tabindex="-1"><a class="header-anchor" href="#_1-1-系统编程指南概述"><span>1.1 系统编程指南概述</span></a></h2>
 <p>本手册的内容概述如下：</p>
