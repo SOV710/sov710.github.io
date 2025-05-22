@@ -3,62 +3,12 @@
 <div class="friend-links-container">
   <div class="friend-card">
     <div class="friend-card-cover">
-      <img src="/images/friends/vuepress.png" alt="VuePress" />
+      <img src="/friends/ljq.png" alt="知言" />
     </div>
     <div class="friend-card-content">
-      <div class="friend-name">VuePress</div>
-      <div class="friend-desc">基于Vue的静态网站生成器</div>
-      <a href="https://v2.vuepress.vuejs.org/" target="_blank" class="friend-link">访问网站</a>
-    </div>
-  </div>
-  <div class="friend-card">
-    <div class="friend-card-cover">
-      <img src="/images/friends/vuepress-hope.png" alt="VuePress Theme Hope" />
-    </div>
-    <div class="friend-card-content">
-      <div class="friend-name">VuePress Theme Hope</div>
-      <div class="friend-desc">一个功能强大的VuePress主题</div>
-      <a href="https://theme-hope.vuejs.press/" target="_blank" class="friend-link">访问网站</a>
-    </div>
-  </div>
-  <div class="friend-card">
-    <div class="friend-card-cover">
-      <img src="/images/friends/vue.png" alt="Vue.js" />
-    </div>
-    <div class="friend-card-content">
-      <div class="friend-name">Vue.js</div>
-      <div class="friend-desc">渐进式JavaScript框架</div>
-      <a href="https://vuejs.org/" target="_blank" class="friend-link">访问网站</a>
-    </div>
-  </div>
-  <div class="friend-card">
-    <div class="friend-card-cover">
-      <img src="/images/friends/arch.png" alt="Arch Linux" />
-    </div>
-    <div class="friend-card-content">
-      <div class="friend-name">Arch Linux</div>
-      <div class="friend-desc">轻量级且灵活的Linux发行版</div>
-      <a href="https://archlinux.org/" target="_blank" class="friend-link">访问网站</a>
-    </div>
-  </div>
-  <div class="friend-card">
-    <div class="friend-card-cover">
-      <img src="/images/friends/robot.png" alt="ROS" />
-    </div>
-    <div class="friend-card-content">
-      <div class="friend-name">ROS</div>
-      <div class="friend-desc">机器人操作系统</div>
-      <a href="https://www.ros.org/" target="_blank" class="friend-link">访问网站</a>
-    </div>
-  </div>
-  <div class="friend-card">
-    <div class="friend-card-cover">
-      <img src="/images/friends/intel.png" alt="Intel" />
-    </div>
-    <div class="friend-card-content">
-      <div class="friend-name">Intel</div>
-      <div class="friend-desc">英特尔开发者文档</div>
-      <a href="https://www.intel.com/content/www/us/en/developer/overview.html" target="_blank" class="friend-link">访问网站</a>
+      <div class="friend-name">知言</div>
+      <div class="friend-desc">任豚收收味</div>
+      <a href="https://timlin15.github.io/" target="_blank" class="friend-link">访问网站</a>
     </div>
   </div>
 </div>
@@ -69,8 +19,8 @@
 <pre><code>- 邮箱: chris916911179@outlook.com
 - GitHub: https://github.com/sov710
 </code></pre>
-  </div>
-  <div class="apply-info">
+</div>
+<div class="apply-info">
     <div class="apply-info-title">申请请至少提供：</div>
     <div class="apply-info-content">
       <pre><code>name: "您的网站名称"
@@ -79,7 +29,7 @@ url: "网站链接"
 avatar: "头像图片链接"</code></pre>
     </div>
   </div>
-  <div class="apply-info">
+<div class="apply-info">
     <div class="apply-info-title">本站信息</div>
     <div class="apply-info-content">
       <pre><code>name: "SOV710 Blog"

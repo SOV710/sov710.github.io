@@ -42,7 +42,7 @@ export default hopeTheme({
       icon: "book",
       prefix: "/columns/",
       children: [
-        { text: "Intel手册中文翻译", icon: "book", link: "columns1/" },
+        { text: "Intel手册中文翻译", icon: "book", link: "intel-manual-translate/" },
       ],
     },
     {
@@ -72,7 +72,7 @@ export default hopeTheme({
         children: "structure",
       },
     ],
-    "/columns/columns1/": [
+    "/columns/intel-manual-translate/": [
       {
         text: "Intel手册中文翻译",
         icon: "book",
@@ -93,30 +93,33 @@ export default hopeTheme({
     articleInfo: ["Date", "Category", "Tag", "ReadingTime"],
   },
 
-  // Markdown configuration
+  // Markdown configuration - Centralized and corrected
   markdown: {
+    breaks: true, 
+    linkify: true,
     highlighter: {
       type: "prismjs",
       preloadLanguages: ['markdown', 'javascript', 'typescript', 'bash', 'css'],
     },
+    figure: true,
+    imgLazyload: true,
+    imgMark: true,
+    imgSize: true,
+    gfm: true,        // Enables GFM features including tables and standard bold/italic
+    footnote: true,   // Enables footnotes
+    tasklist: true,   // Enables task lists
+    align: true,      // Enables text alignment (via ::: center/right)
+    mark: true,       // Enables ==highlighted text==
   },
 
   // Plugin configuration
   plugins: {
     blog: true,
-    
-    // Copy code
     copyCode: {},
-    
-    // Enable auto-catalog
     catalog: {},
-    
-    // Components
     components: {
       components: ["Badge"]
     },
-
-    // Add search functionality
     search: {
       isSearchable: (page) => page.path !== "/",
       maxSuggestions: 10,
@@ -127,7 +130,6 @@ export default hopeTheme({
         },
       },
     },
-
     icon: {
       assets: "fontawesome-with-brands",
     }

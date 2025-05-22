@@ -34,7 +34,7 @@
 <li><strong>Email</strong>：<a href="mailto:example@example.com" target="_blank" rel="noopener noreferrer">example@example.com</a></li>
 </ul>
 <h2 id="版权声明" tabindex="-1"><a class="header-anchor" href="#版权声明"><span>版权声明</span></a></h2>
-<p>除特别注明外，本站所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</p>
+<p>除特别注明外，本站所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> 许可协议。</p>
 </div></template>
 
 

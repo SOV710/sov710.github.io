@@ -45,4 +45,4 @@ SOV710，一名热爱技术的开发者，专注于以下技术领域：
 
 ## 版权声明
 
-除特别注明外，本站所有文章均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 许可协议。转载请注明出处！ 
+除特别注明外，本站所有文章均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 许可协议。

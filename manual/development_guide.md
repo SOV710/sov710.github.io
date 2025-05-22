@@ -101,7 +101,7 @@ vuepress/
 │   ├── posts/              # 博客总结目录
 │   │   └── article*.md     # 总结文件
 │   ├── columns/            # 专栏目录
-│   │   └── columns1/       # Intel手册中文翻译
+│   │   └── intel-manual-translate/ # Intel手册中文翻译
 │   ├── README.md           # 首页
 │   ├── about.md            # 关于页面
 │   └── get-started.md      # 快速开始页面
@@ -191,7 +191,7 @@ export default hopeTheme({
       icon: "book",
       prefix: "/columns/",
       children: [
-        { text: "Intel手册中文翻译", icon: "book", link: "columns1/" },
+        { text: "Intel手册中文翻译", icon: "book", link: "intel-manual-translate/" },
       ],
     },
     {
@@ -211,7 +211,7 @@ export default hopeTheme({
         children: "structure",           // 自动生成侧边栏
       },
     ],
-    "/columns/columns1/": [
+    "/columns/intel-manual-translate/": [
       {
         text: "Intel手册中文翻译",
         icon: "book",
@@ -549,7 +549,7 @@ tag:
 
 专栏是一系列相关文章的集合，可以在`docs/columns/`目录下创建：
 
-1. 创建专栏目录，如`docs/columns/columns1/`
+1. 创建专栏目录，如`docs/columns/intel-manual-translate/`
 2. 在专栏目录中添加文章，使用Frontmatter定义顺序
 3. 在主题配置中定义专栏侧边栏
 
@@ -990,3 +990,4 @@ pnpm docs:update-package
 ---
 
 本文档提供了SOV710博客的全面开发指南。随着项目发展，建议定期更新此文档以保持其有效性和准确性。
+ 

@@ -1,0 +1,16 @@
+import comp from "/home/chris/myworld/git/vuepress/docs/.vuepress/.temp/pages/posts/d-250402.html.vue"
+const data = JSON.parse("{\"path\":\"/posts/d-250402.html\",\"title\":\"每日总结喵 | Apr 2\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"每日总结喵 | Apr 2\",\"date\":\"2025-04-02T00:00:00.000Z\",\"category\":[\"日总结\"],\"tag\":[\"Rust\"],\"cover\":\"/posts/d-250401-cover.jpg\",\"description\":\"每日总结喵 | Apr 2 做了什么 前一天熬夜熬到两点，但是感觉没学多少rust……还是不要熬夜比较好，或许熬了也没什么效率（笑 rust的所有权机制好几把怪 看了一天rust，rust的the book看了一半，感觉rust的基本语法和特性基本学完了，明天就不看了，看源码去 每日水群并自惭形秽，群友们怎么这么强 iPad成功ssh上主机，以后上课玩...\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"每日总结喵 | Apr 2\\\",\\\"image\\\":[\\\"https://sov710.github.io/posts/d-250402-1.png\\\",\\\"https://sov710.github.io/posts/d-250402-2.jpg \\\\\\\"\\\\\\\"\\\"],\\\"datePublished\\\":\\\"2025-04-02T00:00:00.000Z\\\",\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"SOV710\\\",\\\"url\\\":\\\"https://github.com/sov710\\\"}]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://sov710.github.io/posts/d-250402.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"SOV710 Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"每日总结喵 | Apr 2\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"每日总结喵 | Apr 2 做了什么 前一天熬夜熬到两点，但是感觉没学多少rust……还是不要熬夜比较好，或许熬了也没什么效率（笑 rust的所有权机制好几把怪 看了一天rust，rust的the book看了一半，感觉rust的基本语法和特性基本学完了，明天就不看了，看源码去 每日水群并自惭形秽，群友们怎么这么强 iPad成功ssh上主机，以后上课玩...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://sov710.github.io/posts/d-250401-cover.jpg\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"meta\",{\"name\":\"twitter:image:src\",\"content\":\"https://sov710.github.io/posts/d-250401-cover.jpg\"}],[\"meta\",{\"name\":\"twitter:image:alt\",\"content\":\"每日总结喵 | Apr 2\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Rust\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2025-04-02T00:00:00.000Z\"}]]},\"readingTime\":{\"minutes\":1.49,\"words\":447},\"filePathRelative\":\"posts/d-250402.md\",\"excerpt\":\"\\n<h2>做了什么</h2>\\n<ul>\\n<li>前一天熬夜熬到两点，但是感觉没学多少rust……还是不要熬夜比较好，或许熬了也没什么效率（笑</li>\\n<li>rust的所有权机制好几把怪</li>\\n<li>看了一天rust，rust的the book看了一半，感觉rust的基本语法和特性基本学完了，明天就不看了，看源码去</li>\\n<li>每日水群并自惭形秽，群友们怎么这么强</li>\\n<li>iPad成功ssh上主机，以后上课玩Terminal</li>\\n</ul>\\n<figure><img src=\\\"/posts/d-250402-1.png\\\" alt=\\\"\\\" tabindex=\\\"0\\\" loading=\\\"lazy\\\"><figcaption></figcaption></figure>\",\"autoDesc\":true}")
+export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

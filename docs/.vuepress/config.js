@@ -1,6 +1,9 @@
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
-import theme from "./theme.js";
+import theme from "./theme.ts";
+import { markdownExtPlugin } from "@vuepress/plugin-markdown-ext";
+import { markdownHintPlugin } from "@vuepress/plugin-markdown-hint";
+import { markdownStylizePlugin } from "@vuepress/plugin-markdown-stylize";
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -12,6 +15,32 @@ export default defineUserConfig({
   
   // Use Vite as bundler
   bundler: viteBundler(),
+  
+  // Add markdown plugins directly
+  plugins: [
+    // Add GitHub Flavored Markdown support
+    markdownExtPlugin({
+      gfm: true,
+      sup: true,
+      sub: true,
+      tabs: true,
+      tasklist: true,
+      footnote: true,
+      checkbox: true,
+    }),
+    
+    // Add container support
+    markdownHintPlugin({
+      hint: true,
+    }),
+    
+    // Add stylize support
+    markdownStylizePlugin({
+      mark: true,
+      align: true,
+      sub: true,
+    }),
+  ],
   
   head: [
     // Enhanced favicon configuration

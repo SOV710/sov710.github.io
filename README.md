@@ -12,9 +12,9 @@ sov710-blog/
 │   │   ├── theme.ts          # 主题配置文件
 │   │   └── public/           # 静态资源目录
 │   ├── columns/              # 专栏文章目录
-│   │   └── columns1/         # 专栏1
-│   │       ├── 01-intro.md   # 专栏文章1
-│   │       └── 02-basic.md   # 专栏文章2
+│   │   └── intel-manual-translate/ # Intel手册中文翻译
+│   │       ├── README.md     # 专栏介绍
+│   │       └── 01-about-this-manual.md # 关于本手册
 │   ├── posts/                # 博客文章目录
 │   │   ├── 2024-07-10-intro.md # 博客文章1
 │   │   └── 2024-07-15-markdown.md # 博客文章2
