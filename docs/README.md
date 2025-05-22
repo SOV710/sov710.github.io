@@ -3,7 +3,8 @@ home: true
 layout: Blog
 icon: home
 title: SOV710 Blog
-heroImage: /logo.jpg
+bgImage: /background.jpg
+bgImageDark: /background.jpg
 heroText: SOV710 Blog
 tagline: Let's play arch & robotics!
 heroFullScreen: true
@@ -18,25 +19,10 @@ projects:
     desc: 博主的知乎链接喵
     link: https://www.zhihu.com/people/sov710
 
-  - icon: fa-solid fa-book-open
-    name: 书籍名称
-    desc: 书籍详细描述
-    link: https://你的书籍链接
-
   - icon: fa-solid fa-file-lines
-    name: 文章名称
-    desc: 文章详细描述
-    link: https://你的文章链接
-
-  - icon: fa-solid fa-user-group
-    name: 伙伴名称
-    desc: 伙伴详细描述
-    link: https://你的伙伴链接
-
-  - icon: fa-solid fa-rocket
-    name: 自定义项目
-    desc: 自定义详细描述
-    link: https://你的自定义链接
+    name: Intel手册中文翻译
+    desc: 也可以参见我的知乎文章
+    link: https://sov710.github.io/column
 
 footer: MIT Licensed | Copyright © 2025 SOV710
 ---

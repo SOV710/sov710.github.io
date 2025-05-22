@@ -50,6 +50,13 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
+    "title": "朋友们",
+    "headers": [],
+    "path": "/friends.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "Get Started",
     "headers": [
       {
@@ -279,29 +286,6 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/posts/archive2.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Article 1",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Heading 2",
-        "slug": "heading-2",
-        "link": "#heading-2",
-        "children": [
-          {
-            "level": 3,
-            "title": "Heading 3",
-            "slug": "heading-3",
-            "link": "#heading-3",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/posts/article1.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -832,20 +816,6 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
-    "title": "标签: tag A",
-    "headers": [],
-    "path": "/tag/tag-a/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "标签: tag B",
-    "headers": [],
-    "path": "/tag/tag-b/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "标签: tag C",
     "headers": [],
     "path": "/tag/tag-c/",
@@ -856,6 +826,20 @@ export const SEARCH_INDEX = [
     "title": "标签: tag D",
     "headers": [],
     "path": "/tag/tag-d/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "标签: tag A",
+    "headers": [],
+    "path": "/tag/tag-a/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "标签: tag B",
+    "headers": [],
+    "path": "/tag/tag-b/",
     "pathLocale": "/",
     "extraFields": []
   },

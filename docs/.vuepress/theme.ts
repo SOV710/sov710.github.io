@@ -51,6 +51,11 @@ export default hopeTheme({
       link: "/timeline/",
     },
     {
+      text: "友链",
+      icon: "user-group",
+      link: "/friends.html",
+    },
+    {
       text: "关于我",
       icon: "user",
       link: "/about.html",
@@ -88,6 +93,14 @@ export default hopeTheme({
     articleInfo: ["Date", "Category", "Tag", "ReadingTime"],
   },
 
+  // Markdown configuration
+  markdown: {
+    highlighter: {
+      type: "prismjs",
+      preloadLanguages: ['markdown', 'javascript', 'typescript', 'bash', 'css'],
+    },
+  },
+
   // Plugin configuration
   plugins: {
     blog: true,
@@ -116,7 +129,7 @@ export default hopeTheme({
     },
 
     icon: {
-      assets: "fontawesome",
+      assets: "fontawesome-with-brands",
     }
   },
 
