@@ -13,7 +13,9 @@
 - [7. 部署流程](#7-部署流程)
 - [8. 功能扩展](#8-功能扩展)
 - [9. 性能优化](#9-性能优化)
-- [10. 常见问题解答](#10-常见问题解答)
+- [10. 图片资源处理](#10-图片资源处理)
+- [11. 项目精简](#11-项目精简)
+- [12. 常见问题解答](#12-常见问题解答)
 
 ## 1. 项目概述
 
@@ -720,7 +722,7 @@ $$ E = mc^2 $$
 
 使用Mermaid绘制流程图：
 
-````markdown
+```markdown
 ```mermaid
 flowchart LR
     A[开始] --> B{判断}
@@ -729,7 +731,7 @@ flowchart LR
     C --> E[结束]
     D --> E
 ```
-````
+```
 
 #### 3. 任务列表
 
@@ -740,11 +742,11 @@ flowchart LR
 
 #### 4. 代码块
 
-````markdown
+```markdown
 ```javascript
 console.log('Hello World!');
 ```
-````
+```
 
 > 注意：代码块中的语言标识必须完整拼写，例如使用`javascript`而不是简写的`js`，以避免渲染错误。
 
@@ -768,7 +770,166 @@ vuepress-theme-hope内置支持图片和评论区的延迟加载功能。
 
 使用Vite打包器可以获得更快的构建速度和更小的输出文件。
 
-## 10. 常见问题解答
+## 10. 图片资源处理
+
+### 图片资源路径规则
+
+在VuePress中，图片资源的引用需要遵循一定的规则，来确保在开发和生产环境中都能正确显示。
+
+#### 静态资源目录
+
+VuePress约定`.vuepress/public`目录为静态资源目录，此目录中的文件会被复制到生成的网站根目录下。
+
+```
+docs/.vuepress/public/
+├── favicon.ico      # 网站图标
+├── logo.jpg         # 博客Logo
+└── avatar.jpg       # 用户头像
+```
+
+#### 图片资源引用规则
+
+1. **配置文件中的图片引用**
+
+   在`theme.ts`和`config.js`中引用图片资源时，应使用**根路径**，以`/`开头：
+
+   ```js
+   // 正确方式
+   logo: "/logo.jpg",
+   logoDark: "/logo.jpg",
+   
+   // 错误方式 - 会导致无法找到资源
+   logo: "./public/logo.jpg",  // 错误路径
+   logo: "logo.jpg",           // 相对路径可能无效
+   ```
+
+   同样，在`config.js`的`head`配置中：
+
+   ```js
+   head: [
+     // 正确方式
+     ['link', { rel: 'icon', href: '/favicon.ico' }],
+     
+     // 错误方式
+     ['link', { rel: 'icon', href: './public/favicon.ico' }], // 错误路径
+   ],
+   ```
+
+2. **Markdown文件中的图片引用**
+
+   在Markdown文件中引用图片有两种方式：
+
+   - **使用根路径**（推荐）：以`/`开头，直接引用`public`目录下的资源
+     ```markdown
+     ![Logo](/logo.jpg)
+     ```
+
+   - **使用相对路径**：相对于当前Markdown文件的位置
+     ```markdown
+     ![相对路径图片](./images/example.jpg)
+     ```
+     注意：这种情况下，相对路径的图片应该放在与Markdown文件相同目录下的`images`文件夹中。
+
+3. **组件中的图片引用**
+
+   在Vue组件中引用图片时，可以使用：
+   
+   ```vue
+   <img src="/logo.jpg" alt="Logo" />
+   ```
+
+### 图片资源最佳实践
+
+1. **使用一致的路径规则**
+   - 静态资源总是放在`.vuepress/public`目录下
+   - 配置文件中使用根路径`/`引用
+   - Markdown中可使用根路径`/`或相对路径`./`
+
+2. **图片命名规范**
+   - 使用有意义的文件名
+   - 避免使用空格和特殊字符
+   - 使用小写字母和连字符（如`hero-image.jpg`）
+
+3. **图片格式选择**
+   - 照片和复杂图像：使用`.jpg`或`.webp`
+   - 图标和简单图像：使用`.png`或`.svg`
+   - 动画：使用`.gif`或`.webp`
+
+4. **图片优化**
+   - 压缩图片以减小文件大小
+   - 为不同设备提供不同分辨率的图片
+   - 考虑使用懒加载
+
+### 当前项目图片资源
+
+当前项目中使用的主要图片资源如下：
+
+| 文件名 | 路径 | 用途 | 引用位置 |
+|--------|------|------|----------|
+| favicon.ico | /docs/.vuepress/public/favicon.ico | 网站图标 | config.js中的head配置 |
+| logo.jpg | /docs/.vuepress/public/logo.jpg | 网站Logo | theme.ts的logo和logoDark配置，README.md的heroImage |
+| avatar.jpg | /docs/.vuepress/public/avatar.jpg | 用户头像 | 可在about.md中使用 |
+
+### 常见图片问题排查
+
+1. **图片无法显示**
+   - 检查文件路径是否正确
+   - 确认图片文件是否存在于正确位置
+   - 检查引用路径是否使用了正确的格式（`/`开头）
+
+2. **图片在开发环境显示但生产环境不显示**
+   - 检查路径是否使用了相对路径而非根路径
+   - 确认构建过程中图片是否被正确复制
+
+3. **图片显示但路径有警告**
+   - 检查是否使用了不规范的路径格式
+   - 使用开发者工具查看具体的路径解析问题
+
+## 11. 项目精简
+
+为保持项目结构清晰和维护简单，建议定期清理冗余和不必要的文件。
+
+### 可删除的示例文件
+
+以下文件是示例文件，在实际开发中可以删除：
+
+```
+docs/posts/
+├── article1.md ~ article12.md  # 示例文章，可删除
+├── archive1.md, archive2.md    # 示例归档文章，可删除
+├── sticky.md, sticky2.md       # 示例置顶文章，可删除
+```
+
+保留有实际内容的文章，如：
+```
+docs/posts/
+├── 2024-07-10-intro.md        # 保留的实际文章
+├── 2024-07-15-markdown.md     # 保留的实际文章
+```
+
+### 代码精简原则
+
+1. **移除未使用的组件和依赖**
+   - 检查package.json中的依赖是否都在使用
+   - 删除未使用的插件配置
+
+2. **配置文件精简**
+   - 移除重复的配置
+   - 使用默认值而非显式配置每个选项
+
+3. **主题定制精简**
+   - 只定制需要改变的部分
+   - 移除与默认设置相同的配置
+
+4. **样式表精简**
+   - 合并相似的CSS规则
+   - 移除未使用的样式定义
+
+5. **文档精简**
+   - 确保文档与代码一致
+   - 移除过时的文档内容
+
+## 12. 常见问题解答
 
 ### Q: 如何更新主题和插件？
 
@@ -789,8 +950,9 @@ pnpm docs:update-package
 
 2. `You are setting "markdown.code" option in vuepress config file`
    - 不要直接在config.js中使用`markdown.lineNumbers`或`markdown.code`
-   - 应该使用主题中配置 Markdown highlighter：
+   - 应该在theme.ts中的markdown配置中设置highlighter：
    ```js
+   // theme.ts
    markdown: {
      highlighter: {
        type: "prismjs",
@@ -799,18 +961,21 @@ pnpm docs:update-package
    }
    ```
 
-3. `Missing flow highlighter, skip highlighting`
+3. `You are setting "markdown.highlighter" option in vuepress config file`
+   - 将highlighter配置从config.js移到theme.ts的markdown选项中
+
+4. `Missing flow highlighter, skip highlighting`
    - 可以忽略或安装相应的语法高亮插件
    - 或者在prismjsPlugin配置中指定需要预加载的语言
 
-4. `@vuepress/plugin-search is not installed!`
+5. `@vuepress/plugin-search is not installed!`
    - 运行 `pnpm add -D @vuepress/plugin-search@next` 安装插件
-   - 在config.js中正确配置searchPlugin
+   - 在theme.ts中配置search插件
    
-5. `Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@vuepress/plugin-prismjs'`
+6. `Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@vuepress/plugin-prismjs'`
    - 运行 `pnpm add -D @vuepress/plugin-prismjs@next` 安装插件
 
-6. `Element is missing end tag` 错误
+7. `Element is missing end tag` 错误
    - 检查Markdown代码块，确保使用完整的语言标识，例如使用 `javascript` 而不是 `js`
    - 确保代码块开始和结束标记正确（三个反引号）
 
