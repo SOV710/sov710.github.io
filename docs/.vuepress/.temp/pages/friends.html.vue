@@ -11,6 +11,36 @@
       <a href="https://timlin15.github.io/" target="_blank" class="friend-link">访问网站</a>
     </div>
   </div>
+  <div class="friend-card">
+    <div class="friend-card-cover">
+      <img src="/friends/wnc.jpg" alt="wnc的咖啡馆" />
+    </div>
+    <div class="friend-card-content">
+      <div class="friend-name">wnc的咖啡馆</div>
+      <div class="friend-desc">很厉害很全面的群u</div>
+      <a href="https://wncfht.github.io/notes/" target="_blank" class="friend-link">访问网站</a>
+    </div>
+  </div>
+  <div class="friend-card">
+    <div class="friend-card-cover">
+      <img src="/friends/baoshuo.jpg" alt="Baoshuo" />
+    </div>
+    <div class="friend-card-content">
+      <div class="friend-name">Baoshuo</div>
+      <div class="friend-desc">全栈很厉害的群u</div>
+      <a href="https://baoshuo.ren/" target="_blank" class="friend-link">访问网站</a>
+    </div>
+  </div>
+  <div class="friend-card">
+    <div class="friend-card-cover">
+      <img src="/friends/kinnari.jpg" alt="Kinnari" />
+    </div>
+    <div class="friend-card-content">
+      <div class="friend-name">Kinnari</div>
+      <div class="friend-desc">贴贴</div>
+      <a href="https://kinnariyamamatanha.github.io/" target="_blank" class="friend-link">访问网站</a>
+    </div>
+  </div>
 </div>
 <div class="apply-container">
   <div class="apply-title">申请友链</div>
@@ -223,11 +253,16 @@ html.dark .apply-title {
   white-space: pre-wrap;
   padding: 0;
   background-color: transparent;
-  color: var(--c-text-code);
+  color: var(--c-text-code, #c9d1d9); /* Default to a light color suitable for dark backgrounds */
+}
+
+/* Ensure code text is light in light mode if background is dark, or dark if background is light */
+html:not(.dark) .apply-info-content code {
+  color: #c9d1d9; /* Light color for code text on dark background in light mode */
 }
 
 html.dark .apply-info-content code {
-  color: var(--c-text-code-dark, #c9d1d9);
+  color: var(--c-text-code-dark, #c9d1d9); /* Keep this for dark mode consistency */
 }
 
 /* Responsive adjustments */
