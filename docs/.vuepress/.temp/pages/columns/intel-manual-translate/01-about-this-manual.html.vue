@@ -10,6 +10,10 @@
 第 3A、3B、3C 和 3D 卷则描述了 Intel 64 与 IA-32 处理器的<strong>操作系统支持环境</strong>，其目标读者为操作系统及 BIOS 的设计者。</p>
 <p>此外，第 3B 和第 3C 卷还涉及了<strong>承载操作系统的软件类别的编程环境</strong>（例如虚拟机监控器等）。<br>
 第 4 卷则专门描述了 Intel 64 与 IA-32 处理器的<strong>型号特定寄存器（MSRs）</strong>。</p>
+<div class="hint-container tip">
+<p class="hint-container-title">注意</p>
+<p>译者注：这个专栏翻译的部分是intel manual volume 3，也就是3A, 3B, 3C, &amp; 3D部分（也是我们一般语境下的intel手册），不涉及其他部分</p>
+</div>
 <h2 id="_1-1-系统编程指南概述" tabindex="-1"><a class="header-anchor" href="#_1-1-系统编程指南概述"><span>1.1 系统编程指南概述</span></a></h2>
 <p>本手册的内容概述如下：</p>
 <ul>
@@ -26,15 +30,15 @@
 介绍支持段式和分页管理的数据结构、寄存器和指令，说明它们如何用于实现“平坦”内存模型（无分段）或分段内存模型。</p>
 </li>
 <li>
-<p><strong>第4章 — 线性地址预处理（Linear-Address Pre-Processing）</strong><br>
+<p><strong>第4章 — 线性地址预处理</strong><br>
 描述线性地址在地址转换前所需经历的检查过程，包括线性地址空间隔离（LASS）和规范性检查（canonicality），以及线性地址掩码（LAM）处理。</p>
 </li>
 <li>
-<p><strong>第5章 — 分页（Paging）</strong><br>
+<p><strong>第5章 — 分页</strong><br>
 描述 Intel 64 与 IA-32 处理器支持的各种分页模式。</p>
 </li>
 <li>
-<p><strong>第6章 — 保护机制（Protection）</strong><br>
+<p><strong>第6章 — 保护机制</strong><br>
 描述 Intel 架构提供的分页与分段保护机制，包含特权规则的实现、堆栈切换、指针验证、用户模式与特权模式。</p>
 </li>
 <li>
@@ -42,15 +46,15 @@
 说明架构中定义的中断机制、中断与异常如何与保护机制相关联，以及各类异常的处理方式。还包括对 LINT0 和 LINT1 引脚编程的说明与示例。</p>
 </li>
 <li>
-<p><strong>第8章 — 用户中断（User Interrupts）</strong><br>
+<p><strong>第8章 — 用户中断</strong><br>
 描述 Intel 64 与 IA-32 处理器支持的用户中断功能。</p>
 </li>
 <li>
-<p><strong>第9章 — 任务管理（Task Management）</strong><br>
+<p><strong>第9章 — 任务管理</strong><br>
 说明架构提供的支持多任务与任务间保护的机制。</p>
 </li>
 <li>
-<p><strong>第10章 — 多处理器管理（Multiple-Processor Management）</strong><br>
+<p><strong>第10章 — 多处理器管理</strong><br>
 描述用于支持共享内存、多处理器操作和 Intel® 超线程技术的指令与标志位，包括 P6 系列处理器的多处理器初始化流程及 MP 协议启动示例。</p>
 </li>
 <li>
@@ -58,7 +62,7 @@
 定义处理器在复位初始化后的状态，说明如何配置处理器进入实地址模式或保护模式，以及模式切换方法。</p>
 </li>
 <li>
-<p><strong>第12章 — 可编程中断控制器（APIC）</strong><br>
+<p><strong>第12章 — 高级可编程中断控制器（APIC）</strong><br>
 描述本地 APIC 的编程接口以及与 I/O APIC 的接口概要，包括 APIC 总线的消息格式，适用于 P6 系列和 Pentium 处理器。</p>
 </li>
 <li>
@@ -70,7 +74,7 @@
 说明系统级对 Intel® MMX™ 技术的支持要求，包括任务切换、异常处理以及与现有系统环境的兼容性。</p>
 </li>
 <li>
-<p><strong>第15章 — 指令集扩展与扩展处理器状态的系统编程</strong><br>
+<p><strong>第15章 — 指令集扩展与处理器扩展状态的系统编程</strong><br>
 描述操作系统对 SSE/SSE2/SSE3/SSSE3/SSE4 扩展指令的支持需求，包括任务切换、异常处理与兼容性。后半部分介绍了支持扩展处理器状态的可扩展框架，涵盖超出 SSE 系列的其他指令集扩展。</p>
 </li>
 <li>
@@ -86,7 +90,7 @@
 举例说明如何解释发生在 P6 系列处理器上的机器检查错误码。</p>
 </li>
 <li>
-<p><strong>第19章 — 调试、分支分析、TSC 与资源监控特性</strong><br>
+<p><strong>第19章 — 调试、分支分析、TSC 与Intel® 资源监控技术特性</strong><br>
 描述处理器提供的调试寄存器与调试机制，以及时间戳计数器（TSC）。</p>
 </li>
 <li>
@@ -94,11 +98,11 @@
 描述架构特性“最近分支记录”的功能与使用。</p>
 </li>
 <li>
-<p><strong>第21章 — 性能监控（Performance Monitoring）</strong><br>
+<p><strong>第21章 — 性能监控</strong><br>
 描述架构支持的性能监控功能。</p>
 </li>
 <li>
-<p><strong>第22章 — 8086 模拟（Emulation）</strong><br>
+<p><strong>第22章 — 8086 模拟</strong><br>
 描述 IA-32 架构中的实地址模式和虚拟 8086 模式。</p>
 </li>
 <li>
@@ -150,7 +154,7 @@
 描述 Intel® Processor Trace 的详细实现。</p>
 </li>
 <li>
-<p><strong>第35章 — Intel® SGX（软件防护扩展）简介</strong><br>
+<p><strong>第35章 — Intel® SGX 简介</strong><br>
 提供对 Intel® SGX 指令集的概览。</p>
 </li>
 <li>
@@ -170,7 +174,7 @@
 描述 Intel SGX 提供的 supervisor/user 级指令集。</p>
 </li>
 <li>
-<p><strong>第40章 — Intel® SGX 与架构的交互</strong><br>
+<p><strong>第40章 — Intel® SGX与IA-32 / Intel® 64架构的交互</strong><br>
 描述 SGX 指令如何在支持 IA-32 与 Intel 64 架构的处理器上创建受保护执行环境。</p>
 </li>
 <li>
@@ -178,7 +182,7 @@
 描述用于 Enclave 程序的调试方法与分析选项。</p>
 </li>
 <li>
-<p><strong>附录 A — VMX 能力报告机制（VMX Capability Reporting Facility）</strong><br>
+<p><strong>附录 A — VMX 能力报告机制</strong><br>
 描述 VMX 能力的特定 MSR。通过读取这些 MSR 可判断是否支持特定的 VMX 功能。</p>
 </li>
 <li>
@@ -186,7 +190,7 @@
 枚举 VMCS 中所有字段及其编码，按宽度（16/32/64 位）和类型（访客状态、主机状态等）分类。</p>
 </li>
 <li>
-<p><strong>附录 C — VM 退出基本原因</strong><br>
+<p><strong>附录 C — VMX 退出基本原因</strong><br>
 描述编码 VM 退出原因的 32 位字段，包括软件中断、异常、陷阱、NMI、外部中断、三重错误等情况。</p>
 </li>
 </ul>
