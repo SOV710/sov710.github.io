@@ -132,6 +132,21 @@ export default hopeTheme({
     },
     icon: {
       assets: "fontawesome-with-brands",
+    },
+    comment: {
+      provider: "Giscus",
+      repo: "SOV710/sov710.github.io",
+      repoId: "R_kgDOOuq_dA",
+      category: "Comments",
+      categoryId: "DIC_kwDOOuq_dM4Cqd-N",
+      mapping: "pathname",
+      strict: false,
+      lazyLoading: "lazy",
+      reactionsEnabled: true,
+      metadataEnabled: false,
+      inputPosition: "bottom",
+      theme: "preferred_color_scheme",
+      lang: "zh-CN",
     }
   },
 
