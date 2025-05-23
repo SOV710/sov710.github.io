@@ -1,4 +1,0 @@
-User-agent:*
-Disallow:
-
-Sitemap: https://sov710.github.io/sitemap.xml

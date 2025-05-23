@@ -1,2 +1,0 @@
-    import "/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-markdown-ext@2.0.0-rc.105_markdown-it@14.1.0_vuepress@2.0.0-rc.23_@vue_a347c7903b9fe6460461e00ebaf99be1/node_modules/@vuepress/plugin-markdown-ext/lib/client/styles/footnote.css"
-    import "/home/chris/myworld/git/vuepress/node_modules/.pnpm/@vuepress+plugin-markdown-ext@2.0.0-rc.105_markdown-it@14.1.0_vuepress@2.0.0-rc.23_@vue_a347c7903b9fe6460461e00ebaf99be1/node_modules/@vuepress/plugin-markdown-ext/lib/client/styles/tasklist.css"
