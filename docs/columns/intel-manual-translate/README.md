@@ -15,7 +15,7 @@ category:
 目前正在翻译的内容是Intel® 64 and IA-32 Architectures Software Developer's Manual Volume 3 (3A, 3B, 3C, & 3D): System Programming Guide，这是理解x86架构的核心参考资料。
 
 - [x] 第1章：关于本手册
-- [ ] 第2章：系统架构概览
+- [x] 第2章：系统架构概览
 - [ ] 第3章：保护模式下的内存管理
 - [ ] 第4章：线性地址预处理
 - [ ] 第5章：分页机制
