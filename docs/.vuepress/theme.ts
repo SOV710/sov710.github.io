@@ -43,6 +43,7 @@ export default hopeTheme({
       prefix: "/columns/",
       children: [
         { text: "Intel手册中文翻译", icon: "book", link: "intel-manual-translate/" },
+        { text: "我的prompt库", icon: "wheelchair-move", link: "my-prompt-library/"},
       ],
     },
     {
