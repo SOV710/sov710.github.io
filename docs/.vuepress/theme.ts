@@ -81,6 +81,14 @@ export default hopeTheme({
         children: "structure",
       },
     ],
+    "/columns/my-prompt-library/": [
+      {
+        text: "我的prompt库",
+        icon: "wheelchair-move",
+        prefix: "",
+        children: "structure",
+      },
+    ],
   },
 
   // Blog settings
