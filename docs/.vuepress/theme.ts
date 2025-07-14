@@ -123,6 +123,9 @@ export default hopeTheme({
       type: "prismjs",
       preloadLanguages: ['markdown', 'javascript', 'typescript', 'bash', 'css'],
     },
+    math: {
+      type: "katex",
+    }
     figure: true,
     imgLazyload: true,
     imgMark: true,
