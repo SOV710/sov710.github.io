@@ -125,7 +125,7 @@ export default hopeTheme({
     },
     math: {
       type: "katex",
-    }
+    },
     figure: true,
     imgLazyload: true,
     imgMark: true,
