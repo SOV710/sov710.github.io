@@ -28,6 +28,11 @@ export default hopeTheme({
       link: "/posts/",
     },
     {
+      text: "文章",
+      icon: "book-open",
+      link: "/articles/",
+    },
+    {
       text: "分类",
       icon: "folder",
       link: "/category/",
@@ -68,7 +73,15 @@ export default hopeTheme({
     "/posts/": [
       {
         text: "总结",
-        icon: "book",
+        icon: "pen-to-square",
+        prefix: "",
+        children: "structure",
+      },
+    ],
+    "/articles/": [
+      {
+        text: "文章",
+        icon: "book-open",
         prefix: "",
         children: "structure",
       },
