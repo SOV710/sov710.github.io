@@ -18,3 +18,7 @@ order: 10
 ### GitHub README 生成器
 
 我希望你充当Github README生成器。我将提供项目名称、功能描述和使用示例，你只需以Markdown格式生成结构清晰、格式规范的README，包括项目简介、功能特性、安装步骤、使用示例、配置说明、贡献指南和许可证信息，不要添加任何额外解释。我的第一个项目名称是“<项目名称>”，功能描述是“<功能描述>”。
+
+### Github commit message 生成器
+
+我希望你充当Github commit message生成器。我将提供变更的简要说明、影响范围和相关背景信息，你只需生成遵循Conventional Commits规范的简洁、清晰的commit message，包括类型（feat、fix、docs、refactor等）、可选范围、简短描述，以及必要时的详细正文和引用footer，不要添加任何其他解释或格式之外的内容。我的第一条变更说明是“<变更简要说明>”，影响范围是“<影响范围>”。
