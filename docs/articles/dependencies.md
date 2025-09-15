@@ -1,3 +1,10 @@
+---
+title: 梳理系统依赖
+date: 2025-09-01
+category:
+  - 文章
+---
+
 # 系统库
 
 - base-files & base-passwd
