@@ -30,7 +30,7 @@ cover: https://pic1.zhimg.com/70/v2-30fa79b1973d7dc85c15eb4afed5a617_1440w.image
 
 2014: 这个问题首次被提出，在 LWM 上可见
 
-https://link.zhihu.com/?target=https%3A//lwn.net/Articles/605128
+https://lwn.net/Articles/605128
 
 2017 LSFMM：Amir Goldstein (overlayfs 的 co-maintainer) 提及了一个解决方案
 
@@ -43,11 +43,11 @@ https://link.zhihu.com/?target=https%3A//lwn.net/Articles/605128
 > Goldstein said that the superblock watch is the simplest approach, rather than having a recursive fanotify watch on the mount point, which does not scale well. That API could eventually be extended to allow the creation of a [change journal](https://msdn.microsoft.com/en-us/library/windows/desktop/aa363798\(v=vs.85\).aspx) like NTFS supports, he said. There did not seem to be any fundamental opposition to the superblock watch feature as it stands.  
 > Goldstein 表示，超级块监视是最简单的方法，而不是在挂载点上进行递归 fanotify 监视，这种方法不具有良好的可扩展性。他说，该 API 最终可以扩展以允许创建类似 NTFS 支持的更改日志。对于目前的超级块监视功能似乎没有任何根本上的反对意见。
 
-https://link.zhihu.com/?target=https%3A//lwn.net/Articles/718802/
+https://lwn.net/Articles/718802/
 
 2018 LSFMM: Amir Goldstein 带着他在 overlayfs 上的初步实践回来了。他明确表示他在 overlayfs 上的类似实现误报有点多，但是最主要的原因是很多 FS 并没有实现这层语义，导致在 VFS 层做简明的实现是有很多困难的。
 
-https://link.zhihu.com/?target=https%3A//lwn.net/Articles/lsfmm2018
+https://lwn.net/Articles/lsfmm2018
 
 2019: Amir Goldstein 汇报了最新的进展：进一步修改了 overlayfs，公司内部生产环境已经用这个机制来跟踪命名空间变化（新建、删除、重命名），而不跟踪文件数据变化，这样就不依赖底层文件系统的 reflink 支持。另外，对于文件数据的变更，他改用自己实现的文件系统 change journal（类似 NTFS 的持久日志），避免其他 fs 未实现的问题。
 
@@ -55,8 +55,8 @@ https://link.zhihu.com/?target=https%3A//lwn.net/Articles/lsfmm2018
 - 缺少“写前通知”机制：现在只能在文件被 `open` for write 时得到通知；如果文件已打开，再次写入或 mmap 写入不会触发通知。他希望有一种方式：能在文件第一次被真正写入前冻结、刷盘，并产生通知 → 记录到 change journal。理想效果类似“pre-write one-shot mark”：只在首次修改时触发，之后解除冻结。提议可能需要新的 VFS hook 或安全钩子，但进入 page-fault 路径的复杂度和锁问题让内核开发者担心。
 - 缺少子树级过滤。希望内核能支持“把某目录标记为子树根”，只报告该子树内的事件。macOS 有类似功能；Btrfs 的子卷处理也和这个有共通点。不过社区（如 Jan Kara）担心强制隔离子树（禁止 rename 进出、hard link 跨越）语义怪异，不好让用户理解。
 
-https://link.zhihu.com/?target=https%3A//lwn.net/Articles/789038/
+https://lwn.net/Articles/789038/
 
 2025 LSFMM: Goldstein 继续先前的话题，提出了两种实现思路，一种是和前面一样做写入前后各发一次事件进行 hook，第二种是提供一种新的系统调用，使得用户需要一致性时，写入操作是通过 SRCU 挂起的，直到写入操作全部完成再统一写入。内核社区认可需求场景，但担心复杂度和性能；目前尚未达成共识。
 
-https://link.zhihu.com/?target=https%3A//lwn.net/Articles/1017947/
+https://lwn.net/Articles/1017947/
